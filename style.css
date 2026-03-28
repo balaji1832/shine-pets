@@ -1,0 +1,171 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+h1, h2, h3 ,h4 ,h5 ,h6 ,span {
+  font-family: 'Baloo 2', cursive;
+}
+
+body, p {
+  font-family: 'Nunito', sans-serif;
+}
+
+.reviews-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.reviews-swiper .swiper-slide {
+  display: flex;
+  height: auto;
+  opacity: 0.8;
+  transform: scale(0.92);
+  transition: 0.4s ease;
+}
+
+.reviews-swiper .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 320px;
+  border-radius: 32px;
+  background: white;
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: 0.4s;
+}
+
+/* Active card */
+.reviews-swiper .swiper-slide-active .review-card {
+  background: #4E8185;
+  color: white;
+}
+
+.review-text {
+  color: #5d5d5d;
+}
+
+.review-role {
+  color: #777;
+}
+
+.reviews-swiper .swiper-slide-active .review-text,
+.reviews-swiper .swiper-slide-active .review-role {
+  color: white;
+}
+
+
+/* Animation css */
+
+.fade-up,
+.fade-down,
+.fade-left,
+.fade-right,
+.fade-in,
+.animate-down,
+.animate-up {
+  opacity: 0;
+
+  transition:
+    opacity 2.1s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 2.1s cubic-bezier(0.22, 1, 0.36, 1);
+
+  will-change: transform, opacity;
+  transform: translate3d(0,0,0);
+  backface-visibility: hidden;
+}
+
+
+/* Directions */
+
+.fade-up    { transform: translateY(40px); }
+.fade-down  { transform: translateY(-40px); }
+.fade-left  { transform: translateX(-40px); }
+.fade-right { transform: translateX(40px); }
+.fade-in    { transform: scale(0.94); }
+
+
+/* Visible state */
+
+.show {
+  opacity: 1;
+  transform: translate3d(0,0,0) scale(1);
+}
+
+
+/* Keyframe cinematic versions */
+
+.animate-down,
+.animate-up {
+  transition: none;
+}
+
+
+/* Top → Down */
+
+@keyframes slideDownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Bottom → Up */
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.show.animate-down {
+  animation: slideDownFade 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.show.animate-up {
+  animation: slideUpFade 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+
+/* Banner center text float animation */
+@keyframes floatY {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+.float-infinite {
+  animation: floatY 6s ease-in-out infinite;
+}
+
+
+@keyframes floatSmooth {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-card {
+  animation: floatSmooth 5s ease-in-out infinite;
+}
