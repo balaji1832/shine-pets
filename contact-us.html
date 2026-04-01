@@ -1,0 +1,921 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-[#f7f7f7]">
+    <!-- HEADER -->
+     <header
+      class="w-full border-b border-black/5 bg-white shadow-sm fixed top-0 z-50 fade-in"
+    >
+      <div class="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
+        <!-- TOP BAR -->
+        <div class="flex h-[90px] items-center justify-between">
+          <!-- Logo -->
+          <a href="index.html" class="shrink-0 flex items-center">
+            <img
+              src="images/logo.png"
+              alt="Ramaniyam"
+              class="h-[70px] sm:h-[75px] md:h-[86px] w-auto object-contain"
+            />
+          </a>
+
+          <!-- DESKTOP NAV -->
+          <nav class="hidden lg:flex items-center gap-8">
+            <!-- Home -->
+            <a
+              href="index.html"
+              class="nav-link relative inline-flex items-center text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+            >
+              Home
+              <span class="nav-underline"></span>
+            </a>
+
+            <!-- About -->
+            <a
+              href="aboutus.html"
+              class="nav-link relative inline-flex items-center text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+            >
+              About
+              <span class="nav-underline"></span>
+            </a>
+
+            <!-- Services -->
+            <div class="relative group">
+              <button
+                type="button"
+                class="nav-link relative flex items-center gap-1 text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+              >
+                Services
+                <svg
+                  class="h-4 w-4 transition group-hover:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M19 9l-7 7-7-7" />
+                </svg>
+                <span class="nav-underline"></span>
+              </button>
+
+              <!-- Dropdown -->
+              <div
+                class="invisible absolute left-0 top-full z-50 mt-4 w-64 translate-y-2 rounded-2xl border border-black/5 bg-white p-3 opacity-0 shadow-xl transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
+              >
+                <a
+                  href="pet-boarding.html"
+                  class="dropdown-link block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
+                  >Pet Boarding</a
+                >
+                <a
+                  href="pet-training.html"
+                  class="dropdown-link block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
+                  >Pet Training</a
+                >
+                <a
+                  href="pet-servicing.html"
+                  class="dropdown-link block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
+                  >Pet Servicing</a
+                >
+                <a
+                  href="pet-swimming.html"
+                  class="dropdown-link block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
+                  >Pet Swimming</a
+                >
+              </div>
+            </div>
+
+            <!-- Gallery -->
+            <a
+              href="gallery.html"
+              class="nav-link relative inline-flex items-center text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+            >
+              Gallery
+              <span class="nav-underline"></span>
+            </a>
+
+            <!-- Contact -->
+            <a
+              href="contact-us.html"
+              class="nav-link relative inline-flex items-center text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+            >
+              Contact Us
+              <span class="nav-underline"></span>
+            </a>
+          </nav>
+
+          <!-- BUTTON -->
+          <div class="hidden lg:flex">
+            <a
+              href="#"
+              class="rounded-full bg-[#4E8185] px-7 py-3 text-white font-semibold hover:bg-[#3f6e72] transition"
+            >
+              Book Now
+            </a>
+          </div>
+
+          <!-- MOBILE BUTTON -->
+          <button
+            id="menuBtn"
+            class="lg:hidden h-11 w-11 flex items-center justify-center border rounded-xl"
+            type="button"
+            aria-label="Open menu"
+          >
+            <svg
+              id="menuIcon"
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <div id="mobileMenu" class="hidden border-t bg-white lg:hidden">
+        <div class="px-4 py-4 space-y-2">
+          <a
+            href="index.html"
+            class="mobile-nav-link block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-100"
+          >
+            Home
+          </a>
+
+          <a
+            href="aboutus.html"
+            class="mobile-nav-link block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-100"
+          >
+            About
+          </a>
+
+          <!-- Mobile Services -->
+          <div class="border rounded-xl">
+            <button
+              id="mobileServicesBtn"
+              class="w-full flex justify-between px-4 py-3 text-[#444]"
+              type="button"
+            >
+              <span>Services</span>
+              <span id="arrow" class="transition-transform duration-300"
+                >⌄</span
+              >
+            </button>
+
+            <div id="mobileServicesMenu" class="hidden px-3 pb-3">
+              <a
+                href="pet-boarding.html"
+                class="mobile-nav-link block px-3 py-2 rounded-lg"
+                >Pet Boarding</a
+              >
+              <a
+                href="pet-training.html"
+                class="mobile-nav-link block px-3 py-2 rounded-lg"
+                >Pet Training</a
+              >
+              <a
+                href="pet-servicing.html"
+                class="mobile-nav-link block px-3 py-2 rounded-lg"
+                >Pet Servicing</a
+              >
+              <a
+                href="pet-swimming.html"
+                class="mobile-nav-link block px-3 py-2 rounded-lg"
+                >Pet Swimming</a
+              >
+            </div>
+          </div>
+
+          <a
+            href="gallery.html"
+            class="mobile-nav-link block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-100"
+          >
+            Gallery
+          </a>
+
+          <a
+            href="contact-us.html"
+            class="mobile-nav-link block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-100"
+          >
+            Contact Us
+          </a>
+
+          <a
+            href="#"
+            class="block text-center mt-3 bg-[#4E8185] text-white py-3 rounded-full font-semibold"
+          >
+            Book Now
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="bg-[#f5f4ef] mt-10">
+        <div
+          class="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
+        >
+          <!-- Top Section -->
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center"
+          >
+            <!-- Left Content -->
+            <div class="max-w-[560px]">
+              <span
+                class="inline-flex fade-left items-center rounded-full bg-[#f3cdbf] px-4 py-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.08em] text-[#8b5c51]"
+              >
+                Contact Our Sanctuary
+              </span>
+
+              <h2
+                class="mt-5 text-[40px] fade-right sm:text-[52px] lg:text-[64px] leading-[0.98] tracking-[-0.05em] font-extrabold text-[#1c1c1c]"
+              >
+                Get in Touch
+              </h2>
+
+              <p
+                class="mt-5 max-w-[520px] fade-down text-[15px] sm:text-[16px] leading-[1.8] text-[#696969]"
+              >
+                We’re here to answer your questions, guide your furry family’s
+                care, and help you schedule a visit. Reach out to us for
+                bookings, consultations, or service enquiries.
+              </p>
+            </div>
+
+            <!-- Right Image -->
+            <div class="flex justify-center lg:justify-end animate-up">
+              <div class="relative w-full max-w-[640px]">
+                <!-- green glow block -->
+                <div
+                  class="absolute -left-3 bottom-[-10px] h-[110px] w-[120px] rounded-[24px] bg-[#c9f1b9] blur-[1px]"
+                ></div>
+
+                <!-- main image -->
+                <div
+                  class="relative overflow-hidden rounded-[28px] shadow-[0_18px_40px_rgba(0,0,0,0.08)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_24px_55px_rgba(0,0,0,0.12)]"
+                >
+                  <img
+                    src="images/p1.jpg"
+                    alt="Dog"
+                    class="h-[280px] sm:h-[360px] lg:h-[390px] w-full object-cover transition duration-700 hover:scale-[1.03]"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Divider Space -->
+        <div class="border-t border-[#ece9e2]"></div>
+
+        <!-- Bottom Contact Section -->
+        <div
+          class="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
+        >
+          <div
+            class="grid grid-cols-1 lg:grid-cols-[360px_minmax(0,1fr)] gap-8 lg:gap-10 items-start"
+          >
+            <!-- Left Info -->
+            <div>
+              <h3
+                class="text-[30px] fade-left sm:text-[34px] leading-[1.05] tracking-[-0.03em] font-extrabold text-[#1f1f1f]"
+              >
+                Reach Out Locally
+              </h3>
+
+              <div class="mt-8 space-y-5">
+                <!-- Phone -->
+                <a href="tel:+9600962996">
+                  <div
+                    class="group animate-up flex items-center gap-4 rounded-[22px] bg-white px-5 py-5 shadow-[0_8px_24px_rgba(0,0,0,0.03)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(0,0,0,0.06)]"
+                  >
+                    <div
+                      class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#87e877] text-[#14852f] transition duration-300 group-hover:scale-110"
+                    >
+                      <!-- your icon -->
+                      <img
+                        src="icons/phone-icon.png"
+                        alt="Phone icon"
+                        class="h-5 w-5 object-contain"
+                      />
+                    </div>
+                    <div>
+                      <p class="text-[18px] font-bold text-[#222222]">Phone</p>
+                      <p class="mt-1 text-[14px] text-[#6e6e6e]">
+                        +96009 62996
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:shinepetsgroomingstudio@gmail.com">
+                  <div
+                    class="group animate-down mt-5 flex items-center gap-4 rounded-[22px] bg-white px-5 py-5 shadow-[0_8px_24px_rgba(0,0,0,0.03)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(0,0,0,0.06)]"
+                  >
+                    <div
+                      class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#87e877] text-[#14852f] transition duration-300 group-hover:scale-110"
+                    >
+                      <!-- your icon -->
+                      <img
+                        src="icons/mail-icon.png"
+                        alt="Email icon"
+                        class="h-5 w-5 object-contain"
+                      />
+                    </div>
+                    <div>
+                      <p class="text-[18px] font-bold text-[#222222]">Email</p>
+                      <p class="mt-1 text-[14px] text-[#6e6e6e] break-all">
+                        shinepetsgroomingstudio@gmail.com
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                <!-- Address -->
+                <div
+                  class="group fade-left animate-up flex items-center gap-4 rounded-[22px] bg-white px-5 py-5 shadow-[0_8px_24px_rgba(0,0,0,0.03)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(0,0,0,0.06)]"
+                >
+                  <div
+                    class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#87e877] text-[#14852f] transition duration-300 group-hover:scale-110"
+                  >
+                    <!-- your icon -->
+                    <img
+                      src="icons/location-icon.png"
+                      alt="Location icon"
+                      class="h-5 w-5 object-contain"
+                    />
+                  </div>
+                  <div>
+                    <p class="text-[18px] font-bold text-[#222222]">Address</p>
+                    <p class="mt-1 text-[14px] leading-[1.7] text-[#6e6e6e]">
+                      Ground Floor, Tami Residency, 45, <br />
+                      Old Mamallapuram Rd, Padur, <br />
+                      Chennai, Tamil Nadu 603103
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Form -->
+            <div
+              class="fade-right rounded-[30px] bg-[#f1efea] p-5 sm:p-7 lg:p-8 shadow-[0_8px_28px_rgba(0,0,0,0.03)]"
+            >
+              <h3
+                class="text-[28px] sm:text-[30px] leading-[1.1] tracking-[-0.02em] font-extrabold text-[#222222]"
+              >
+                Send Us a Message
+              </h3>
+
+              <form class="mt-8 space-y-5">
+                <!-- Row -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label
+                      class="mb-2 block text-[13px] font-semibold text-[#846b5c]"
+                    >
+                      Your Name
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="John "
+                      class="h-12 w-full rounded-[10px] border border-transparent bg-white px-4 text-[15px] text-[#222222] outline-none transition focus:border-[#2eaa3f] focus:ring-2 focus:ring-[#2eaa3f]/15"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      class="mb-2 block text-[13px] font-semibold text-[#846b5c]"
+                    >
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      placeholder="john@example.com"
+                      class="h-12 w-full rounded-[10px] border border-transparent bg-white px-4 text-[15px] text-[#222222] outline-none transition focus:border-[#2eaa3f] focus:ring-2 focus:ring-[#2eaa3f]/15"
+                    />
+                  </div>
+                </div>
+
+                <!-- Pet Type -->
+                <div>
+                  <label
+                    class="mb-2 block text-[13px] font-semibold text-[#846b5c]"
+                  >
+                    Pet Type
+                  </label>
+                  <select
+                    class="h-12 w-full rounded-[10px] border border-transparent bg-white px-4 text-[15px] text-[#666666] outline-none transition focus:border-[#2eaa3f] focus:ring-2 focus:ring-[#2eaa3f]/15"
+                  >
+                    <option>Dog</option>
+                    <option>Cat</option>
+                    <option>Bird</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <!-- Message -->
+                <div>
+                  <label
+                    class="mb-2 block text-[13px] font-semibold text-[#846b5c]"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    rows="6"
+                    placeholder="Tell us how we can help your pet..."
+                    class="w-full rounded-[10px] border border-transparent bg-white px-4 py-4 text-[15px] text-[#222222] outline-none transition resize-none focus:border-[#2eaa3f] focus:ring-2 focus:ring-[#2eaa3f]/15"
+                  ></textarea>
+                </div>
+
+                <!-- Button -->
+                <button
+                  type="submit"
+                  class="inline-flex h-[54px] w-full items-center justify-center rounded-full bg-gradient-to-r from-[#4E8185] to-[#4E8185]/70 text-[15px] font-semibold text-white shadow-[0_8px_18px_rgba(14,132,36,0.18)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_26px_rgba(14,132,36,0.24)]"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- map -->
+      <section class="bg-[#f5f4ef] py-14 sm:py-16 lg:py-20 fade-in">
+        <div class="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+          <!-- Wrapper -->
+          <div
+            class="relative overflow-hidden rounded-[28px] shadow-[0_18px_45px_rgba(0,0,0,0.08)] group"
+          >
+            <!-- Map -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7395.907391024302!2d80.22612029065976!3d12.814177449947357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525bec498a0405%3A0x18b31e0607a6136d!2sShine%20Pets%20Grooming%20%26%20Boarding!5e1!3m2!1sen!2sin!4v1775062997886!5m2!1sen!2sin"
+              class="w-full h-[320px] sm:h-[400px] lg:h-[480px] border-0 transition duration-500 group-hover:scale-[1.02]"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+
+            <!-- Soft overlay gradient -->
+            <div
+              class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- faqs -->
+      <section class="bg-[#f5f4ef] py-14 sm:py-16 lg:py-20 fade-left">
+        <div class="mx-auto max-w-[980px] px-4 sm:px-6 lg:px-8">
+          <!-- Heading -->
+          <div class="text-center">
+            <h2
+              class="text-[28px] sm:text-[34px] lg:text-[40px] font-extrabold tracking-[-0.03em] text-[#222222]"
+            >
+              Common Inquiries
+            </h2>
+          </div>
+
+          <!-- Accordion -->
+          <div class="mt-10 space-y-4 sm:space-y-5">
+            <!-- Item 1 -->
+            <div
+              class="faq-item overflow-hidden rounded-[22px] bg-white shadow-[0_6px_20px_rgba(0,0,0,0.03)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(0,0,0,0.05)]"
+            >
+              <button
+                type="button"
+                class="faq-trigger flex w-full items-center justify-between gap-4 px-5 py-5 text-left sm:px-6 sm:py-6"
+                aria-expanded="true"
+              >
+                <span
+                  class="text-[15px] sm:text-[17px] font-bold leading-[1.4] text-[#222222]"
+                >
+                  What are your operating hours for drop-offs?
+                </span>
+                <span
+                  class="faq-icon shrink-0 text-[24px] font-medium leading-none text-[#17963a] transition-transform duration-300"
+                >
+                  −
+                </span>
+              </button>
+
+              <div
+                class="faq-content grid grid-rows-[1fr] transition-all duration-300 ease-in-out"
+              >
+                <div class="overflow-hidden">
+                  <div class="px-5 pb-5 sm:px-6 sm:pb-6">
+                    <p
+                      class="text-[14px] sm:text-[15px] leading-[1.8] text-[#6b6b6b]"
+                    >
+                      We offer flexible drop-off and pick-up windows from 7:00
+                      AM to 7:00 PM daily. Special arrangements can be made for
+                      our premium Paw’s members.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div
+              class="faq-item overflow-hidden rounded-[22px] bg-white shadow-[0_6px_20px_rgba(0,0,0,0.03)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(0,0,0,0.05)]"
+            >
+              <button
+                type="button"
+                class="faq-trigger flex w-full items-center justify-between gap-4 px-5 py-5 text-left sm:px-6 sm:py-6"
+                aria-expanded="false"
+              >
+                <span
+                  class="text-[15px] sm:text-[17px] font-bold leading-[1.4] text-[#222222]"
+                >
+                  Do you require specific vaccinations?
+                </span>
+                <span
+                  class="faq-icon shrink-0 text-[24px] font-medium leading-none text-[#17963a] transition-transform duration-300"
+                >
+                  +
+                </span>
+              </button>
+
+              <div
+                class="faq-content grid grid-rows-[0fr] transition-all duration-300 ease-in-out"
+              >
+                <div class="overflow-hidden">
+                  <div class="px-5 pb-5 sm:px-6 sm:pb-6">
+                    <p
+                      class="text-[14px] sm:text-[15px] leading-[1.8] text-[#6b6b6b]"
+                    >
+                      Yes, for the safety of all our guests, we require proof of
+                      Rabies, Distemper, and Bordetella vaccinations at least 48
+                      hours prior to arrival.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div
+              class="faq-item overflow-hidden rounded-[22px] bg-white shadow-[0_6px_20px_rgba(0,0,0,0.03)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(0,0,0,0.05)]"
+            >
+              <button
+                type="button"
+                class="faq-trigger flex w-full items-center justify-between gap-4 px-5 py-5 text-left sm:px-6 sm:py-6"
+                aria-expanded="false"
+              >
+                <span
+                  class="text-[15px] sm:text-[17px] font-bold leading-[1.4] text-[#222222]"
+                >
+                  Can I book a tour before my pet’s stay?
+                </span>
+                <span
+                  class="faq-icon shrink-0 text-[24px] font-medium leading-none text-[#17963a] transition-transform duration-300"
+                >
+                  +
+                </span>
+              </button>
+
+              <div
+                class="faq-content grid grid-rows-[0fr] transition-all duration-300 ease-in-out"
+              >
+                <div class="overflow-hidden">
+                  <div class="px-5 pb-5 sm:px-6 sm:pb-6">
+                    <p
+                      class="text-[14px] sm:text-[15px] leading-[1.8] text-[#6b6b6b]"
+                    >
+                      Absolutely. We encourage tours so you can feel confident
+                      in our sanctuary. Tours are available by appointment on
+                      Tuesdays and Saturdays.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- arrow icon -->
+      <!-- Scroll To Top Button -->
+      <button
+        id="scrollTopBtn"
+        class="fixed bottom-6 right-5 z-50 hidden h-12 w-12 items-center justify-center rounded-full bg-[#4E8185] text-white shadow-[0_8px_25px_rgba(0,0,0,0.2)] transition hover:bg-[#06772a] sm:h-14 sm:w-14"
+      >
+        <svg
+          class="h-5 w-5 sm:h-6 sm:w-6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5 15l7-7 7 7"
+          />
+        </svg>
+      </button>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-[#f5f5f1] px-4 pt-14 pb-6 sm:px-6 lg:px-8 border-t border-black/20 animate-up"
+    >
+      <div class="mx-auto max-w-[1400px]">
+        <!-- Top Footer -->
+        <div
+          class="grid grid-cols-1 gap-10 border-b border-black/5 pb-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12"
+        >
+          <!-- Brand -->
+          <div>
+            <h3
+              class="text-[34px] font-extrabold tracking-[-0.03em] text-[#b04b67]"
+            >
+              Shine Pets
+            </h3>
+
+            <p
+              class="mt-5 max-w-[280px] text-[16px] leading-[1.9] text-[#7a7a7a]"
+            >
+              Premium care facility dedicated to the health and happiness of
+              your pets. Professional, trustworthy, and organic.
+            </p>
+
+            <!-- Social Icons Below Paragraph -->
+            <div class="mt-6 flex items-center gap-3">
+              <a
+                href="#"
+                class="flex h-11 w-11 items-center justify-center rounded-full bg-[#ecebe6] text-[#444] transition hover:bg-[#b04b67] hover:text-white"
+                aria-label="Instagram"
+              >
+                <svg
+                  class="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <circle cx="17.5" cy="6.5" r="1"></circle>
+                </svg>
+              </a>
+
+              <a
+                href="#"
+                class="flex h-11 w-11 items-center justify-center rounded-full bg-[#ecebe6] text-[#444] transition hover:bg-[#b04b67] hover:text-white"
+                aria-label="Facebook"
+              >
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M13.5 21v-8.1h2.7l.4-3.1h-3.1V7.8c0-.9.3-1.5 1.6-1.5h1.7V3.5c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.2v2.2H7.7v3.1h2.6V21h3.2z"
+                  />
+                </svg>
+              </a>
+
+              <a
+                href="#"
+                class="flex h-11 w-11 items-center justify-center rounded-full bg-[#ecebe6] text-[#444] transition hover:bg-[#b04b67] hover:text-white"
+                aria-label="X"
+              >
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M18.9 2H22l-6.8 7.8L23 22h-6.1l-4.8-6.3L6.6 22H3.5l7.2-8.2L1 2h6.3l4.3 5.8L18.9 2zm-1.1 18h1.7L6.2 3.9H4.4L17.8 20z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Services -->
+          <div>
+            <h4 class="text-[24px] font-bold tracking-[-0.02em] text-[#1f1f1f]">
+              Services
+            </h4>
+
+            <ul class="mt-5 space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Pet Boarding</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Pet Training</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Pet Swimming</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Pet Grooming</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h4 class="text-[24px] font-bold tracking-[-0.02em] text-[#1f1f1f]">
+              Company
+            </h4>
+
+            <ul class="mt-5 space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Terms of Service</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Us -->
+          <div>
+            <h4 class="text-[24px] font-bold tracking-[-0.02em] text-[#1f1f1f]">
+              Contact Us
+            </h4>
+
+            <div class="mt-5 space-y-4">
+              <!-- Phone -->
+              <div class="flex items-start gap-3">
+                <span
+                  class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center text-[#b04b67]"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.1"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.78.59 2.62a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.46-1.16a2 2 0 0 1 2.11-.45c.84.27 1.72.47 2.62.59A2 2 0 0 1 22 16.92z"
+                    />
+                  </svg>
+                </span>
+                <a
+                  href="tel:+9600962996"
+                  class="text-[16px] leading-[1.7] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                >
+                  +96009 62996
+                </a>
+              </div>
+
+              <!-- Email -->
+              <div class="flex items-start gap-3">
+                <span
+                  class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center text-[#b04b67]"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.1"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 4h16v16H4z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m4 7 8 6 8-6"
+                    />
+                  </svg>
+                </span>
+                <a
+                  href="mailto:shinepetsgroomingstudio@gmail.com"
+                  class="text-[16px] leading-[1.7] text-[#7a7a7a] transition hover:text-[#b04b67] break-all"
+                >
+                  shinepetsgroomingstudio@gmail.com
+                </a>
+              </div>
+
+              <!-- Address -->
+              <div class="flex items-start gap-3">
+                <span
+                  class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center text-[#b04b67]"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.1"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0Z"
+                    />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </span>
+                <p class="text-[16px] leading-[1.7] text-[#7a7a7a]">
+                  Ground Floor, Tami Residency, 45,<br />
+                  Old Mamallapuram Rd, Padur, <br />Chennai, Tamil Nadu 603103
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="pt-6 text-center">
+          <p class="text-[15px] text-[#8a8a8a]">
+            © 2024 Shine Pets. Premium Care for Your Best Friends.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/hamburger-script.js"></script>
+    <script src="js/Animation.js"></script>
+    <script src="js/arrow.js"></script>
+
+    <script>
+      const faqItems = document.querySelectorAll(".faq-item");
+
+      faqItems.forEach((item) => {
+        const button = item.querySelector(".faq-trigger");
+        const content = item.querySelector(".faq-content");
+        const icon = item.querySelector(".faq-icon");
+
+        button.addEventListener("click", () => {
+          const isOpen = button.getAttribute("aria-expanded") === "true";
+
+          faqItems.forEach((otherItem) => {
+            const otherButton = otherItem.querySelector(".faq-trigger");
+            const otherContent = otherItem.querySelector(".faq-content");
+            const otherIcon = otherItem.querySelector(".faq-icon");
+
+            otherButton.setAttribute("aria-expanded", "false");
+            otherContent.classList.remove("grid-rows-[1fr]");
+            otherContent.classList.add("grid-rows-[0fr]");
+            otherIcon.textContent = "+";
+          });
+
+          if (!isOpen) {
+            button.setAttribute("aria-expanded", "true");
+            content.classList.remove("grid-rows-[0fr]");
+            content.classList.add("grid-rows-[1fr]");
+            icon.textContent = "−";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

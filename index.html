@@ -30,8 +30,7 @@
         <!-- TOP BAR -->
         <div class="flex h-[90px] items-center justify-between">
           <!-- Logo -->
-          <a href="/" class="shrink-0 flex items-center">
-            <!-- Replace this with your actual logo image -->
+          <a href="index.html" class="shrink-0 flex items-center">
             <img
               src="images/logo.png"
               alt="Ramaniyam"
@@ -43,27 +42,27 @@
           <nav class="hidden lg:flex items-center gap-8">
             <!-- Home -->
             <a
-              href="#"
-              class="relative text-[15px] font-semibold text-[#4E8185]"
+              href="index.html"
+              class="nav-link relative inline-flex items-center text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
             >
               Home
-              <span
-                class="absolute left-0 -bottom-[8px] h-[3px] w-full rounded-full bg-[#4E8185]"
-              ></span>
+              <span class="nav-underline"></span>
             </a>
 
             <!-- About -->
             <a
-              href="#"
-              class="text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+              href="aboutus.html"
+              class="nav-link relative inline-flex items-center text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
             >
               About
+              <span class="nav-underline"></span>
             </a>
 
             <!-- Services -->
             <div class="relative group">
               <button
-                class="flex items-center gap-1 text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+                type="button"
+                class="nav-link relative flex items-center gap-1 text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
               >
                 Services
                 <svg
@@ -75,6 +74,7 @@
                 >
                   <path d="M19 9l-7 7-7-7" />
                 </svg>
+                <span class="nav-underline"></span>
               </button>
 
               <!-- Dropdown -->
@@ -82,23 +82,23 @@
                 class="invisible absolute left-0 top-full z-50 mt-4 w-64 translate-y-2 rounded-2xl border border-black/5 bg-white p-3 opacity-0 shadow-xl transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
               >
                 <a
-                  href="#"
-                  class="block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
+                  href="pet-boarding.html"
+                  class="dropdown-link block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
                   >Pet Boarding</a
                 >
                 <a
-                  href="#"
-                  class="block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
+                  href="pet-training.html"
+                  class="dropdown-link block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
                   >Pet Training</a
                 >
                 <a
-                  href="#"
-                  class="block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
+                  href="pet-servicing.html"
+                  class="dropdown-link block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
                   >Pet Servicing</a
                 >
                 <a
-                  href="#"
-                  class="block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
+                  href="pet-swimming.html"
+                  class="dropdown-link block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
                   >Pet Swimming</a
                 >
               </div>
@@ -106,18 +106,20 @@
 
             <!-- Gallery -->
             <a
-              href="#"
-              class="text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+              href="gallery.html"
+              class="nav-link relative inline-flex items-center text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
             >
               Gallery
+              <span class="nav-underline"></span>
             </a>
 
             <!-- Contact -->
             <a
-              href="#"
-              class="text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+              href="contact-us.html"
+              class="nav-link relative inline-flex items-center text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
             >
               Contact Us
+              <span class="nav-underline"></span>
             </a>
           </nav>
 
@@ -125,7 +127,7 @@
           <div class="hidden lg:flex">
             <a
               href="#"
-              class="rounded-full bg-[#4E8185] px-7 py-3 text-white font-semibold hover:bg-[#27863a] transition"
+              class="rounded-full bg-[#4E8185] px-7 py-3 text-white font-semibold hover:bg-[#3f6e72] transition"
             >
               Book Now
             </a>
@@ -135,6 +137,8 @@
           <button
             id="menuBtn"
             class="lg:hidden h-11 w-11 flex items-center justify-center border rounded-xl"
+            type="button"
+            aria-label="Open menu"
           >
             <svg
               id="menuIcon"
@@ -142,6 +146,7 @@
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              viewBox="0 0 24 24"
             >
               <path d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -153,44 +158,69 @@
       <div id="mobileMenu" class="hidden border-t bg-white lg:hidden">
         <div class="px-4 py-4 space-y-2">
           <a
-            href="#"
-            class="block px-4 py-3 bg-[#f3fbf5] text-[#4E8185] rounded-xl font-semibold"
-            >Home</a
+            href="index.html"
+            class="mobile-nav-link block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-100"
           >
+            Home
+          </a>
+
           <a
-            href="#"
-            class="block px-4 py-3 text-[#444] hover:bg-gray-100 rounded-xl"
-            >About</a
+            href="aboutus.html"
+            class="mobile-nav-link block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-100"
           >
+            About
+          </a>
 
           <!-- Mobile Services -->
           <div class="border rounded-xl">
             <button
               id="mobileServicesBtn"
-              class="w-full flex justify-between px-4 py-3"
+              class="w-full flex justify-between px-4 py-3 text-[#444]"
+              type="button"
             >
-              Services
-              <span id="arrow">⌄</span>
+              <span>Services</span>
+              <span id="arrow" class="transition-transform duration-300"
+                >⌄</span
+              >
             </button>
 
             <div id="mobileServicesMenu" class="hidden px-3 pb-3">
-              <a href="#" class="block px-3 py-2">Pet Boarding</a>
-              <a href="#" class="block px-3 py-2">Pet Training</a>
-              <a href="#" class="block px-3 py-2">Pet Servicing</a>
-              <a href="#" class="block px-3 py-2">Pet Swimming</a>
+              <a
+                href="pet-boarding.html"
+                class="mobile-nav-link block px-3 py-2 rounded-lg"
+                >Pet Boarding</a
+              >
+              <a
+                href="pet-training.html"
+                class="mobile-nav-link block px-3 py-2 rounded-lg"
+                >Pet Training</a
+              >
+              <a
+                href="pet-servicing.html"
+                class="mobile-nav-link block px-3 py-2 rounded-lg"
+                >Pet Servicing</a
+              >
+              <a
+                href="pet-swimming.html"
+                class="mobile-nav-link block px-3 py-2 rounded-lg"
+                >Pet Swimming</a
+              >
             </div>
           </div>
 
           <a
-            href="#"
-            class="block px-4 py-3 text-[#444] hover:bg-gray-100 rounded-xl"
-            >Gallery</a
+            href="gallery.html"
+            class="mobile-nav-link block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-100"
           >
+            Gallery
+          </a>
+
           <a
-            href="#"
-            class="block px-4 py-3 text-[#444] hover:bg-gray-100 rounded-xl"
-            >Contact Us</a
+            href="contact-us.html"
+            class="mobile-nav-link block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-100"
           >
+            Contact Us
+          </a>
 
           <a
             href="#"
@@ -584,7 +614,7 @@
                   src="images/mission-pet.jpg"
                   alt="Veterinarian caring for a dog"
                   class="h-[420px] w-full object-cover sm:h-[520px] lg:h-[620px]"
-                />  
+                />
               </div>
 
               <!-- Floating Badge -->
@@ -965,126 +995,278 @@
       </section>
 
       <section class="relative py-20 px-4 sm:px-8 overflow-hidden">
- 
-  <!-- Background decorative blobs -->
-  <div class="pointer-events-none absolute -top-24 -left-24 w-96 h-96 bg-green-200 rounded-full opacity-20 blur-3xl"></div>
-  <div class="pointer-events-none absolute -bottom-24 -right-24 w-80 h-80 bg-yellow-200 rounded-full opacity-20 blur-3xl"></div>
-  <div class="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-emerald-100 rounded-full opacity-30 blur-2xl"></div>
- 
-  <!-- ── Section Header ── -->
-  <div class="text-center mb-16 relative z-10 ">
-    <!-- eyebrow -->
-    <div class="fade-left inline-flex items-center gap-2 bg-brand-pale border border-green-200 text-brand-green text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-5">
-      <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 64 64"><ellipse cx="20" cy="14" rx="7" ry="9"/><ellipse cx="44" cy="14" rx="7" ry="9"/><ellipse cx="10" cy="30" rx="6" ry="8"/><ellipse cx="54" cy="30" rx="6" ry="8"/><ellipse cx="32" cy="46" rx="14" ry="16"/></svg>
-      What We Offer
-    </div>
- 
-    <h2 class="fade-right font-baloo font-extrabold text-4xl sm:text-5xl lg:text-6xl text-gray-800 leading-tight mb-4">
-      Care That Makes<br/>
-      <span class="text-brand-green">Every Tail Wag</span>
-    </h2>
-    <p class="text-gray-500 fade-in text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-      From cozy boarding to refreshing swims — our expert team gives your pet a five-star experience, every single visit.
-    </p>
-  </div>
- 
-  <!-- ── 3 Floating Cards Row ── -->
-  <div class="animate-up relative z-10 flex flex-col lg:flex-row items-center justify-center gap-8 max-w-5xl mx-auto">
- 
-    <!-- ══ CARD 1 — Pet Boarding ══ -->
-    <div class="delay-1 animate-floatA w-full max-w-[300px] service-card">
-      <div class="relative bg-white rounded-[28px] shadow-2xl overflow-hidden" style="box-shadow:0 20px 50px -10px rgba(46,125,50,0.14);">
-        <!-- Image -->
-        <div class="relative overflow-hidden rounded-[22px] m-3 h-[220px] bg-amber-400">
-          <img src="images/pr-1.jpeg"
-               alt="Dog boarding"
-               class="w-full h-full object-cover  opacity-90"/>
-          <!-- floating pip top-right -->
-          <div class="pip absolute top-3 right-3 bg-white/80 border border-white rounded-2xl px-3 py-1.5 shadow-md">
-            <p class="text-[9px] font-bold tracking-widest text-brand-green uppercase">Pet Boarding</p>
-            <p class="text-[12px] font-bold text-gray-800">Fun hydro fitness</p>
+        <!-- Background decorative blobs -->
+        <div
+          class="pointer-events-none absolute -top-24 -left-24 w-96 h-96 bg-green-200 rounded-full opacity-20 blur-3xl"
+        ></div>
+        <div
+          class="pointer-events-none absolute -bottom-24 -right-24 w-80 h-80 bg-yellow-200 rounded-full opacity-20 blur-3xl"
+        ></div>
+        <div
+          class="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-emerald-100 rounded-full opacity-30 blur-2xl"
+        ></div>
+
+        <!-- ── Section Header ── -->
+        <div class="text-center mb-16 relative z-10">
+          <!-- eyebrow -->
+          <div
+            class="fade-left inline-flex items-center gap-2 bg-brand-pale border border-green-200 text-brand-green text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-5"
+          >
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 64 64">
+              <ellipse cx="20" cy="14" rx="7" ry="9" />
+              <ellipse cx="44" cy="14" rx="7" ry="9" />
+              <ellipse cx="10" cy="30" rx="6" ry="8" />
+              <ellipse cx="54" cy="30" rx="6" ry="8" />
+              <ellipse cx="32" cy="46" rx="14" ry="16" />
+            </svg>
+            What We Offer
           </div>
+
+          <h2
+            class="fade-right font-baloo font-extrabold text-4xl sm:text-5xl lg:text-6xl text-gray-800 leading-tight mb-4"
+          >
+            Care That Makes<br />
+            <span class="text-brand-green">Every Tail Wag</span>
+          </h2>
+          <p
+            class="text-gray-500 fade-in text-base sm:text-lg max-w-xl mx-auto leading-relaxed"
+          >
+            From cozy boarding to refreshing swims — our expert team gives your
+            pet a five-star experience, every single visit.
+          </p>
         </div>
-        <!-- Content -->
-        <div class="px-5 pb-5 pt-3">
-          <span class="inline-block bg-brand-pale text-brand-green text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-3">Pet Boarding</span>
-          <h3 class="font-baloo font-extrabold text-[22px] text-gray-800 leading-snug mb-2">Luxury stays with restful private zones</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Your pet enjoys cozy beds, personal attention and peaceful rest — just like home.</p>
-          <div class="mt-4 flex items-center gap-2">
-            <div class="w-7 h-7 rounded-full bg-brand-green flex items-center justify-center">
-              <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+
+        <!-- ── 3 Floating Cards Row ── -->
+        <div
+          class="animate-up relative z-10 flex flex-col lg:flex-row items-center justify-center gap-8 max-w-5xl mx-auto"
+        >
+          <!-- ══ CARD 1 — Pet Boarding ══ -->
+          <div class="delay-1 animate-floatA w-full max-w-[300px] service-card">
+            <div
+              class="relative bg-white rounded-[28px] shadow-2xl overflow-hidden"
+              style="box-shadow: 0 20px 50px -10px rgba(46, 125, 50, 0.14)"
+            >
+              <!-- Image -->
+              <div
+                class="relative overflow-hidden rounded-[22px] m-3 h-[220px] bg-amber-400"
+              >
+                <img
+                  src="images/pr-1.jpeg"
+                  alt="Dog boarding"
+                  class="w-full h-full object-cover opacity-90"
+                />
+                <!-- floating pip top-right -->
+                <div
+                  class="pip absolute top-3 right-3 bg-white/80 border border-white rounded-2xl px-3 py-1.5 shadow-md"
+                >
+                  <p
+                    class="text-[9px] font-bold tracking-widest text-brand-green uppercase"
+                  >
+                    Pet Boarding
+                  </p>
+                  <p class="text-[12px] font-bold text-gray-800">
+                    Fun hydro fitness
+                  </p>
+                </div>
+              </div>
+              <!-- Content -->
+              <div class="px-5 pb-5 pt-3">
+                <span
+                  class="inline-block bg-brand-pale text-brand-green text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-3"
+                  >Pet Boarding</span
+                >
+                <h3
+                  class="font-baloo font-extrabold text-[22px] text-gray-800 leading-snug mb-2"
+                >
+                  Luxury stays with restful private zones
+                </h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Your pet enjoys cozy beds, personal attention and peaceful
+                  rest — just like home.
+                </p>
+                <div class="mt-4 flex items-center gap-2">
+                  <div
+                    class="w-7 h-7 rounded-full bg-brand-green flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-3.5 h-3.5 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+                  <span class="text-brand-green text-sm font-bold"
+                    >Learn more</span
+                  >
+                </div>
+              </div>
             </div>
-            <span class="text-brand-green text-sm font-bold">Learn more</span>
           </div>
-        </div>
-      </div>
-    </div>
- 
-    <!-- ══ CARD 2 — Pet Training (taller, center) ══ -->
-    <div class=" delay-2 animate-floatB w-full max-w-[300px] lg:mt-[-40px] service-card">
-      <div class="relative bg-white rounded-[28px] shadow-2xl overflow-hidden" style="box-shadow:0 24px 60px -10px rgba(46,125,50,0.18);">
-        <!-- Image -->
-        <div class="relative overflow-hidden rounded-[22px] m-3 h-[260px]">
-          <img src="images/p2.jpg"
-               alt="Dogs running training"
-               class="w-full h-full object-cover"/>
-        </div>
-        <!-- Content -->
-        <div class="px-5 pb-6 pt-3">
-          <span class="inline-block bg-orange-50 text-orange-500 text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-3">Pet Training</span>
-          <h3 class="font-baloo font-extrabold text-[22px] text-gray-800 leading-snug mb-2">Smart routines with positive reinforcement</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Our certified trainers build confidence and discipline through reward-based techniques.</p>
-          <div class="mt-4 flex items-center gap-2">
-            <div class="w-7 h-7 rounded-full bg-brand-green flex items-center justify-center">
-              <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+
+          <!-- ══ CARD 2 — Pet Training (taller, center) ══ -->
+          <div
+            class="delay-2 animate-floatB w-full max-w-[300px] lg:mt-[-40px] service-card"
+          >
+            <div
+              class="relative bg-white rounded-[28px] shadow-2xl overflow-hidden"
+              style="box-shadow: 0 24px 60px -10px rgba(46, 125, 50, 0.18)"
+            >
+              <!-- Image -->
+              <div
+                class="relative overflow-hidden rounded-[22px] m-3 h-[260px]"
+              >
+                <img
+                  src="images/p2.jpg"
+                  alt="Dogs running training"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <!-- Content -->
+              <div class="px-5 pb-6 pt-3">
+                <span
+                  class="inline-block bg-orange-50 text-orange-500 text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-3"
+                  >Pet Training</span
+                >
+                <h3
+                  class="font-baloo font-extrabold text-[22px] text-gray-800 leading-snug mb-2"
+                >
+                  Smart routines with positive reinforcement
+                </h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Our certified trainers build confidence and discipline through
+                  reward-based techniques.
+                </p>
+                <div class="mt-4 flex items-center gap-2">
+                  <div
+                    class="w-7 h-7 rounded-full bg-brand-green flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-3.5 h-3.5 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+                  <span class="text-brand-green text-sm font-bold"
+                    >Learn more</span
+                  >
+                </div>
+              </div>
             </div>
-            <span class="text-brand-green text-sm font-bold">Learn more</span>
           </div>
-        </div>
-      </div>
-    </div>
- 
-    <!-- ══ CARD 3 — Pet Swimming ══ -->
-    <div class=" delay-3 animate-floatC w-full max-w-[300px] service-card">
-      <div class="relative bg-white rounded-[28px] shadow-2xl overflow-hidden" style="box-shadow:0 20px 50px -10px rgba(46,125,50,0.14);">
-        <!-- Image -->
-        <div class="relative overflow-hidden rounded-[22px] m-3 h-[220px]">
-          <img src="images/pr-2.jpeg"
-               alt="Pet swimming"
-               class="w-full h-full object-cover"/>
-          <!-- pip top -->
-          <div class="pip absolute top-3 left-3 bg-white/85 border border-white rounded-2xl px-3 py-1.5 shadow-md">
-            <p class="text-[9px] font-bold tracking-widest text-blue-500 uppercase">Pet Servicing</p>
-            <p class="text-[12px] font-bold text-gray-800">Full spa &amp; care</p>
-          </div>
-        </div>
-        <!-- Content -->
-        <div class="px-5 pb-5 pt-3">
-          <span class="inline-block bg-blue-50 text-blue-500 text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-3">Pet Swimming</span>
-          <h3 class="font-baloo font-extrabold text-[22px] text-gray-800 leading-snug mb-2">Refreshing swims for fit &amp; happy pets</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Hydrotherapy and fun splash sessions keep your pet active, healthy and absolutely delighted.</p>
-          <div class="mt-4 flex items-center gap-2">
-            <div class="w-7 h-7 rounded-full bg-brand-green flex items-center justify-center">
-              <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+
+          <!-- ══ CARD 3 — Pet Swimming ══ -->
+          <div class="delay-3 animate-floatC w-full max-w-[300px] service-card">
+            <div
+              class="relative bg-white rounded-[28px] shadow-2xl overflow-hidden"
+              style="box-shadow: 0 20px 50px -10px rgba(46, 125, 50, 0.14)"
+            >
+              <!-- Image -->
+              <div
+                class="relative overflow-hidden rounded-[22px] m-3 h-[220px]"
+              >
+                <img
+                  src="images/pr-2.jpeg"
+                  alt="Pet swimming"
+                  class="w-full h-full object-cover"
+                />
+                <!-- pip top -->
+                <div
+                  class="pip absolute top-3 left-3 bg-white/85 border border-white rounded-2xl px-3 py-1.5 shadow-md"
+                >
+                  <p
+                    class="text-[9px] font-bold tracking-widest text-blue-500 uppercase"
+                  >
+                    Pet Servicing
+                  </p>
+                  <p class="text-[12px] font-bold text-gray-800">
+                    Full spa &amp; care
+                  </p>
+                </div>
+              </div>
+              <!-- Content -->
+              <div class="px-5 pb-5 pt-3">
+                <span
+                  class="inline-block bg-blue-50 text-blue-500 text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-3"
+                  >Pet Swimming</span
+                >
+                <h3
+                  class="font-baloo font-extrabold text-[22px] text-gray-800 leading-snug mb-2"
+                >
+                  Refreshing swims for fit &amp; happy pets
+                </h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Hydrotherapy and fun splash sessions keep your pet active,
+                  healthy and absolutely delighted.
+                </p>
+                <div class="mt-4 flex items-center gap-2">
+                  <div
+                    class="w-7 h-7 rounded-full bg-brand-green flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-3.5 h-3.5 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+                  <span class="text-brand-green text-sm font-bold"
+                    >Learn more</span
+                  >
+                </div>
+              </div>
             </div>
-            <span class="text-brand-green text-sm font-bold">Learn more</span>
           </div>
         </div>
-      </div>
-    </div>
- 
-  </div><!-- /cards row -->
- 
-  <!-- ── Bottom CTA ── -->
-  <div class="text-center mt-16 relative z-10">
-    <a href="#" class="animate-up inline-flex items-center gap-2 bg-brand-green hover:bg-brand-dark text-white font-bold text-sm px-8 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 active:scale-95">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-      Book a Session Today
-    </a>
-    <p class="text-gray-400 text-xs mt-3 fade-right">No credit card required · Cancel anytime</p>
-  </div>
- 
-</section>
+        <!-- /cards row -->
+
+        <!-- ── Bottom CTA ── -->
+        <div class="text-center mt-16 relative z-10">
+          <a
+            href="#"
+            class="animate-up inline-flex items-center gap-2 bg-brand-green hover:bg-brand-dark text-white font-bold text-sm px-8 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 active:scale-95"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+            Book a Session Today
+          </a>
+          <p class="text-gray-400 text-xs mt-3 fade-right">
+            No credit card required · Cancel anytime
+          </p>
+        </div>
+      </section>
 
       <!-- form section -->
       <!-- Contact Section -->
@@ -1286,8 +1468,6 @@
           </div>
         </div>
       </section>
-
-      
 
       <!-- arrow icon -->
       <!-- Scroll To Top Button -->
@@ -1557,7 +1737,7 @@
     <script src="js/hamburger-script.js"></script>
     <script src="js/Animation.js"></script>
     <script src="js/arrow.js"></script>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
@@ -1583,34 +1763,49 @@
       });
     </script>
 
-      <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            baloo: ['"Baloo 2"', 'cursive'],
-            nunito: ['Nunito', 'sans-serif'],
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              baloo: ['"Baloo 2"', "cursive"],
+              nunito: ["Nunito", "sans-serif"],
+            },
+            colors: {
+              brand: {
+                green: "#2E7D32",
+                light: "#4CAF50",
+                pale: "#E8F5E9",
+                dark: "#1B5E20",
+              },
+            },
+            keyframes: {
+              floatA: {
+                "0%,100%": { transform: "translateY(0px) rotate(-1deg)" },
+                "50%": { transform: "translateY(-18px) rotate(1deg)" },
+              },
+              floatB: {
+                "0%,100%": { transform: "translateY(0px) rotate(1deg)" },
+                "50%": { transform: "translateY(-22px) rotate(-1deg)" },
+              },
+              floatC: {
+                "0%,100%": { transform: "translateY(0px) rotate(0.5deg)" },
+                "50%": { transform: "translateY(-14px) rotate(-0.5deg)" },
+              },
+              fadeUp: {
+                "0%": { opacity: "0", transform: "translateY(40px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+            },
+            animation: {
+              floatA: "floatA 5s ease-in-out infinite",
+              floatB: "floatB 6.5s ease-in-out infinite",
+              floatC: "floatC 4.5s ease-in-out infinite",
+              fadeUp: "fadeUp 0.7s ease both",
+            },
           },
-          colors: {
-            brand: { green: '#2E7D32', light: '#4CAF50', pale: '#E8F5E9', dark: '#1B5E20' }
-          },
-          keyframes: {
-            floatA: { '0%,100%': { transform: 'translateY(0px) rotate(-1deg)' }, '50%': { transform: 'translateY(-18px) rotate(1deg)' } },
-            floatB: { '0%,100%': { transform: 'translateY(0px) rotate(1deg)' },  '50%': { transform: 'translateY(-22px) rotate(-1deg)' } },
-            floatC: { '0%,100%': { transform: 'translateY(0px) rotate(0.5deg)' },'50%': { transform: 'translateY(-14px) rotate(-0.5deg)' } },
-            fadeUp: { '0%': { opacity: '0', transform: 'translateY(40px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
-          },
-          animation: {
-            floatA: 'floatA 5s ease-in-out infinite',
-            floatB: 'floatB 6.5s ease-in-out infinite',
-            floatC: 'floatC 4.5s ease-in-out infinite',
-            fadeUp: 'fadeUp 0.7s ease both',
-          }
-        }
-      }
-    }
-  </script>
-
-   
+        },
+      };
+    </script>
   </body>
 </html>

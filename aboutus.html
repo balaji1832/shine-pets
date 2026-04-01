@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-[#f7f7f7]">
+    <!-- HEADER -->
+     <header
+      class="w-full border-b border-black/5 bg-white shadow-sm fixed top-0 z-50 fade-in"
+    >
+      <div class="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
+        <!-- TOP BAR -->
+        <div class="flex h-[90px] items-center justify-between">
+          <!-- Logo -->
+          <a href="index.html" class="shrink-0 flex items-center">
+            <img
+              src="images/logo.png"
+              alt="Ramaniyam"
+              class="h-[70px] sm:h-[75px] md:h-[86px] w-auto object-contain"
+            />
+          </a>
+
+          <!-- DESKTOP NAV -->
+          <nav class="hidden lg:flex items-center gap-8">
+            <!-- Home -->
+            <a
+              href="index.html"
+              class="nav-link relative inline-flex items-center text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+            >
+              Home
+              <span class="nav-underline"></span>
+            </a>
+
+            <!-- About -->
+            <a
+              href="aboutus.html"
+              class="nav-link relative inline-flex items-center text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+            >
+              About
+              <span class="nav-underline"></span>
+            </a>
+
+            <!-- Services -->
+            <div class="relative group">
+              <button
+                type="button"
+                class="nav-link relative flex items-center gap-1 text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+              >
+                Services
+                <svg
+                  class="h-4 w-4 transition group-hover:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M19 9l-7 7-7-7" />
+                </svg>
+                <span class="nav-underline"></span>
+              </button>
+
+              <!-- Dropdown -->
+              <div
+                class="invisible absolute left-0 top-full z-50 mt-4 w-64 translate-y-2 rounded-2xl border border-black/5 bg-white p-3 opacity-0 shadow-xl transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
+              >
+                <a
+                  href="pet-boarding.html"
+                  class="dropdown-link block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
+                  >Pet Boarding</a
+                >
+                <a
+                  href="pet-training.html"
+                  class="dropdown-link block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
+                  >Pet Training</a
+                >
+                <a
+                  href="pet-servicing.html"
+                  class="dropdown-link block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
+                  >Pet Servicing</a
+                >
+                <a
+                  href="pet-swimming.html"
+                  class="dropdown-link block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
+                  >Pet Swimming</a
+                >
+              </div>
+            </div>
+
+            <!-- Gallery -->
+            <a
+              href="gallery.html"
+              class="nav-link relative inline-flex items-center text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+            >
+              Gallery
+              <span class="nav-underline"></span>
+            </a>
+
+            <!-- Contact -->
+            <a
+              href="contact-us.html"
+              class="nav-link relative inline-flex items-center text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+            >
+              Contact Us
+              <span class="nav-underline"></span>
+            </a>
+          </nav>
+
+          <!-- BUTTON -->
+          <div class="hidden lg:flex">
+            <a
+              href="#"
+              class="rounded-full bg-[#4E8185] px-7 py-3 text-white font-semibold hover:bg-[#3f6e72] transition"
+            >
+              Book Now
+            </a>
+          </div>
+
+          <!-- MOBILE BUTTON -->
+          <button
+            id="menuBtn"
+            class="lg:hidden h-11 w-11 flex items-center justify-center border rounded-xl"
+            type="button"
+            aria-label="Open menu"
+          >
+            <svg
+              id="menuIcon"
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <div id="mobileMenu" class="hidden border-t bg-white lg:hidden">
+        <div class="px-4 py-4 space-y-2">
+          <a
+            href="index.html"
+            class="mobile-nav-link block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-100"
+          >
+            Home
+          </a>
+
+          <a
+            href="aboutus.html"
+            class="mobile-nav-link block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-100"
+          >
+            About
+          </a>
+
+          <!-- Mobile Services -->
+          <div class="border rounded-xl">
+            <button
+              id="mobileServicesBtn"
+              class="w-full flex justify-between px-4 py-3 text-[#444]"
+              type="button"
+            >
+              <span>Services</span>
+              <span id="arrow" class="transition-transform duration-300"
+                >⌄</span
+              >
+            </button>
+
+            <div id="mobileServicesMenu" class="hidden px-3 pb-3">
+              <a
+                href="pet-boarding.html"
+                class="mobile-nav-link block px-3 py-2 rounded-lg"
+                >Pet Boarding</a
+              >
+              <a
+                href="pet-training.html"
+                class="mobile-nav-link block px-3 py-2 rounded-lg"
+                >Pet Training</a
+              >
+              <a
+                href="pet-servicing.html"
+                class="mobile-nav-link block px-3 py-2 rounded-lg"
+                >Pet Servicing</a
+              >
+              <a
+                href="pet-swimming.html"
+                class="mobile-nav-link block px-3 py-2 rounded-lg"
+                >Pet Swimming</a
+              >
+            </div>
+          </div>
+
+          <a
+            href="gallery.html"
+            class="mobile-nav-link block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-100"
+          >
+            Gallery
+          </a>
+
+          <a
+            href="contact-us.html"
+            class="mobile-nav-link block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-100"
+          >
+            Contact Us
+          </a>
+
+          <a
+            href="#"
+            class="block text-center mt-3 bg-[#4E8185] text-white py-3 rounded-full font-semibold"
+          >
+            Book Now
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="bg-[#f5f3ef] mt-10">
+        <!-- Section 1 -->
+        <div
+          class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
+        >
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center"
+          >
+            <!-- Left Content -->
+            <div class="max-w-[580px]">
+              <span
+                class="inline-block fade-in rounded-full bg-[#f3cdbf] px-4 py-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.08em] text-[#8f5e53]"
+              >
+                Our Journey
+              </span>
+
+              <h2
+                class="mt-5 text-[36px] fade-left leading-[1.02] font-extrabold tracking-[-0.04em] text-[#151515] sm:text-[48px] md:text-[58px] lg:text-[68px]"
+              >
+                Our Story: A
+                <span class="block text-[#4E8185]">Sanctuary</span>
+                for Your Best Friends
+              </h2>
+
+              <p
+                class="mt-6 max-w-[520px] fade-right text-[15px] sm:text-[16px] leading-[1.8] text-[#6e6e6e]"
+              >
+                Born from a passion for holistic pet well-being, Shibe Pets
+                envisions a nurturing haven where every furry companion feels
+                safe, loved, and cared for like family.
+              </p>
+            </div>
+
+            <!-- Right Image -->
+            <div class="flex justify-center lg:justify-end animate-up">
+              <div
+                class="relative w-full max-w-[400px] sm:max-w-[460px] lg:max-w-[520px]"
+              >
+                <div
+                  class="absolute inset-x-8 bottom-[-12px] h-24 rounded-full bg-[#98d98f]/30 blur-3xl"
+                ></div>
+                <img
+                  src="images/team-33.jpg"
+                  alt="Woman hugging golden retriever"
+                  class="relative z-10 w-full rounded-[28px] object-cover shadow-[0_18px_40px_rgba(0,0,0,0.08)]"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div
+          class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 lg:pb-20"
+        >
+          <div
+            class="grid grid-cols-1 lg:grid-cols-[420px_minmax(0,1fr)] gap-6 lg:gap-10 items-center"
+          >
+            <!-- Left Image Card -->
+            <div
+              class="rounded-[20px] fade-left bg-white p-2.5 shadow-[0_8px_24px_rgba(0,0,0,0.06)]"
+            >
+              <img
+                src="images/pets-room.jpg"
+                alt="Dogs in indoor play area"
+                class="h-[200px] sm:h-[230px] lg:h-[210px] w-full rounded-[16px] object-cover"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div class="max-w-[720px]">
+              <h3
+                class="text-[28px] fade-right sm:text-[32px] lg:text-[38px] font-extrabold tracking-[-0.03em] text-[#242424] leading-[1.1]"
+              >
+                Every Pet Deserves a Shining Moment
+              </h3>
+
+              <p
+                class="mt-4 fade-down text-[15px] sm:text-[16px] leading-[1.8] text-[#666666]"
+              >
+                We believe that pet care should be more than just a service—it
+                should be an organic extension of their home life. Our
+                trustworthy approach combines high-end aesthetics with deep
+                biological understanding.
+              </p>
+
+              <p
+                class="mt-4 text-[15px] fade-down sm:text-[16px] leading-[1.8] text-[#666666]"
+              >
+                From our hand-picked organic treats to our customized sensory
+                gardens, every detail at Shine Pets is designed to evoke calm,
+                curiosity, and comfort. We aren't just a facility, we are a
+                retreat.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- our foundation -->
+      <section class="bg-[#f5f4ef] py-14 sm:py-16 lg:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <!-- Heading -->
+          <div class="text-center">
+            <h2
+              class="text-[28px] fade-in sm:text-[34px] lg:text-[42px] font-extrabold tracking-[-0.03em] text-[#1f1f1f]"
+            >
+              Our Foundations
+            </h2>
+          </div>
+
+          <!-- Cards -->
+          <div
+            class="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6"
+          >
+            <!-- Card 1 -->
+            <div
+              class="group animate-up rounded-[26px] bg-white p-6 sm:p-7 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_18px_45px_rgba(0,0,0,0.08)]"
+            >
+              <div
+                class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#8BE77A] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
+              >
+                <!-- Put your icon here -->
+                <img
+                  src="images/of-1.png"
+                  alt="Trust icon"
+                  class="h-6 w-6 object-contain"
+                />
+              </div>
+
+              <h3
+                class="mt-5 text-[20px] font-extrabold tracking-[-0.02em] text-[#1f1f1f]"
+              >
+                Trust
+              </h3>
+
+              <p class="mt-3 text-[15px] leading-[1.8] text-[#6d6d6d]">
+                Unwavering transparency in every interaction, ensuring your
+                peace of mind while your loved ones are in our care.
+              </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="group animate-down rounded-[26px] bg-white p-6 sm:p-7 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_18px_45px_rgba(0,0,0,0.08)]"
+            >
+              <div
+                class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#8BE77A] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
+              >
+                <!-- Put your icon here -->
+                <img
+                  src="images/of-2.png"
+                  alt="Organic care icon"
+                  class="h-6 w-6 object-contain"
+                />
+              </div>
+
+              <h3
+                class="mt-5 text-[20px] font-extrabold tracking-[-0.02em] text-[#1f1f1f]"
+              >
+                Organic Care
+              </h3>
+
+              <p class="mt-3 text-[15px] leading-[1.8] text-[#6d6d6d]">
+                A commitment to natural well-being with toxin-free grooming,
+                safe nutrition, and thoughtfully curated enrichment activities.
+              </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="group animate-up rounded-[26px] bg-white p-6 sm:p-7 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_18px_45px_rgba(0,0,0,0.08)] sm:col-span-2 lg:col-span-1"
+            >
+              <div
+                class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#8BE77A] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
+              >
+                <!-- Put your icon here -->
+                <img
+                  src="images/of-3.png"
+                  alt="Tailored excellence icon"
+                  class="h-6 w-6 object-contain"
+                />
+              </div>
+
+              <h3
+                class="mt-5 text-[20px] font-extrabold tracking-[-0.02em] text-[#1f1f1f]"
+              >
+                Tailored Excellence
+              </h3>
+
+              <p class="mt-3 text-[15px] leading-[1.8] text-[#6d6d6d]">
+                Every detail has a unique purpose, thoughtfully shaped to suit
+                each pet’s lifestyle, needs, and emotional comfort.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[#f5f4ef] py-14 sm:py-16 lg:py-20">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Heading -->
+          <div class="max-w-[700px]">
+            <h2
+              class="text-[28px] fade-left sm:text-[34px] lg:text-[40px] font-extrabold tracking-[-0.03em] text-[#1f1f1f]"
+            >
+              The Hearts Behind the Shine
+            </h2>
+
+            <p
+              class="mt-3 text-[15px] fade-right sm:text-[16px] text-[#6f6f6f] leading-[1.7]"
+            >
+              Our team combines expertise in veterinary science, behavior
+              studies, and compassionate care to ensure every pet thrives.
+            </p>
+          </div>
+
+          <!-- Cards -->
+          <div
+            class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          >
+            <!-- Card 1 -->
+            <div class="group transition-all fade-left duration-500 hover:-translate-y-2">
+              <div class="overflow-hidden rounded-[22px]">
+                <img
+                  src="images/team-1.jpg"
+                  alt="sanjay"
+                  class="w-full h-[320px] sm:h-[360px] lg:h-[380px] object-cover transition duration-500 group-hover:scale-[1.03]"
+                />
+              </div>
+
+              <h3 class="mt-5 text-[18px] font-extrabold text-[#1f1f1f]">
+                Sanjay
+              </h3>
+
+              <p class="text-[14px] font-semibold text-[#1fa34a] mt-1">
+                Founder & Visionary
+              </p>
+
+              <p class="mt-3 text-[14px] leading-[1.7] text-[#6d6d6d]">
+                Sanjay founded Shine Pets to bridge the gap between premium pet
+                care and holistic wellness for urban pets.
+              </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="group animate-up transition-all duration-500 hover:-translate-y-2">
+              <div class="overflow-hidden rounded-[22px]">
+                <img
+                  src="images/team-2.jpg"
+                  alt="john"
+                  class="w-full h-[320px] sm:h-[360px] lg:h-[380px] object-cover transition duration-500 group-hover:scale-[1.03]"
+                />
+              </div>
+
+              <h3 class="mt-5 text-[18px] font-extrabold text-[#1f1f1f]">
+                John
+              </h3>
+
+              <p class="text-[14px] font-semibold text-[#1fa34a] mt-1">
+                Head Trainer
+              </p>
+
+              <p class="mt-3 text-[14px] leading-[1.7] text-[#6d6d6d]">
+                A master of canine behavioral science, John focuses on building
+                trust-driven relationships between pets and owners.
+              </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="group animate-down transition-all duration-500 hover:-translate-y-2">
+              <div class="overflow-hidden rounded-[22px]">
+                <img
+                  src="images/team-3.jpg"
+                  alt="Saran"
+                  class="w-full h-[320px] sm:h-[360px] lg:h-[380px] object-cover transition duration-500 group-hover:scale-[1.03]"
+                />
+              </div>
+
+              <h3 class="mt-5 text-[18px] font-extrabold text-[#1f1f1f]">
+                Saran
+              </h3>
+
+              <p class="text-[14px] font-semibold text-[#1fa34a] mt-1">
+                Grooming Specialist
+              </p>
+
+              <p class="mt-3 text-[14px] leading-[1.7] text-[#6d6d6d]">
+                Saran transforms grooming into a calming ritual, ensuring
+                comfort, hygiene, and stress-free experiences for every pet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- book section -->
+      <section class="bg-[#f5f4ef] py-14 sm:py-16 lg:py-20">
+        <div class="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+          <div
+            class="relative mx-auto max-w-[1120px] overflow-hidden rounded-[28px] bg-[#4E8185]"
+          >
+            <!-- Center darker strip -->
+
+            <div
+              class="relative z-10 flex flex-col items-center justify-center px-6 py-16 text-center sm:px-10 sm:py-20 lg:py-24"
+            >
+              <h2
+                class="text-[34px] fade-in font-extrabold tracking-[-0.04em] text-white sm:text-[46px] lg:text-[56px] leading-[1.05]"
+              >
+                Join the Family
+              </h2>
+
+              <p
+                class="mt-5 fade-left max-w-[620px] text-[15px] sm:text-[17px] leading-[1.7] text-white/80"
+              >
+                Experience the gold standard of pet care. Your pet’s shining
+                journey starts with a single visit.
+              </p>
+
+              <div
+                class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
+              >
+                <a
+                  href="#"
+                  class="inline-flex fade-up min-w-[190px] items-center justify-center rounded-full bg-[#f5f4ef] px-7 py-3.5 text-[15px] font-semibold text-black shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-white"
+                >
+                  Book a Consultation
+                </a>
+
+                <a
+                  href="#"
+                  class="inline-flex fade-down min-w-[190px] items-center justify-center rounded-full border border-white/80 bg-transparent px-7 py-3.5 text-[15px] font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/10"
+                >
+                  View Services
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- arrow icon -->
+      <!-- Scroll To Top Button -->
+      <button
+        id="scrollTopBtn"
+        class="fixed bottom-6 right-5 z-50 hidden h-12 w-12 items-center justify-center rounded-full bg-[#4E8185] text-white shadow-[0_8px_25px_rgba(0,0,0,0.2)] transition hover:bg-[#06772a] sm:h-14 sm:w-14"
+      >
+        <svg
+          class="h-5 w-5 sm:h-6 sm:w-6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5 15l7-7 7 7"
+          />
+        </svg>
+      </button>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-[#f5f5f1] px-4 pt-14 pb-6 sm:px-6 lg:px-8 border-t border-black/20 animate-up"
+    >
+      <div class="mx-auto max-w-[1400px]">
+        <!-- Top Footer -->
+        <div
+          class="grid grid-cols-1 gap-10 border-b border-black/5 pb-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12"
+        >
+          <!-- Brand -->
+          <div>
+            <h3
+              class="text-[34px] font-extrabold tracking-[-0.03em] text-[#b04b67]"
+            >
+              Shine Pets
+            </h3>
+
+            <p
+              class="mt-5 max-w-[280px] text-[16px] leading-[1.9] text-[#7a7a7a]"
+            >
+              Premium care facility dedicated to the health and happiness of
+              your pets. Professional, trustworthy, and organic.
+            </p>
+
+            <!-- Social Icons Below Paragraph -->
+            <div class="mt-6 flex items-center gap-3">
+              <a
+                href="#"
+                class="flex h-11 w-11 items-center justify-center rounded-full bg-[#ecebe6] text-[#444] transition hover:bg-[#b04b67] hover:text-white"
+                aria-label="Instagram"
+              >
+                <svg
+                  class="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <circle cx="17.5" cy="6.5" r="1"></circle>
+                </svg>
+              </a>
+
+              <a
+                href="#"
+                class="flex h-11 w-11 items-center justify-center rounded-full bg-[#ecebe6] text-[#444] transition hover:bg-[#b04b67] hover:text-white"
+                aria-label="Facebook"
+              >
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M13.5 21v-8.1h2.7l.4-3.1h-3.1V7.8c0-.9.3-1.5 1.6-1.5h1.7V3.5c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.2v2.2H7.7v3.1h2.6V21h3.2z"
+                  />
+                </svg>
+              </a>
+
+              <a
+                href="#"
+                class="flex h-11 w-11 items-center justify-center rounded-full bg-[#ecebe6] text-[#444] transition hover:bg-[#b04b67] hover:text-white"
+                aria-label="X"
+              >
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M18.9 2H22l-6.8 7.8L23 22h-6.1l-4.8-6.3L6.6 22H3.5l7.2-8.2L1 2h6.3l4.3 5.8L18.9 2zm-1.1 18h1.7L6.2 3.9H4.4L17.8 20z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Services -->
+          <div>
+            <h4 class="text-[24px] font-bold tracking-[-0.02em] text-[#1f1f1f]">
+              Services
+            </h4>
+
+            <ul class="mt-5 space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Pet Boarding</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Pet Training</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Pet Swimming</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Pet Grooming</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h4 class="text-[24px] font-bold tracking-[-0.02em] text-[#1f1f1f]">
+              Company
+            </h4>
+
+            <ul class="mt-5 space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Terms of Service</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Us -->
+          <div>
+            <h4 class="text-[24px] font-bold tracking-[-0.02em] text-[#1f1f1f]">
+              Contact Us
+            </h4>
+
+            <div class="mt-5 space-y-4">
+              <!-- Phone -->
+              <div class="flex items-start gap-3">
+                <span
+                  class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center text-[#b04b67]"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.1"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.78.59 2.62a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.46-1.16a2 2 0 0 1 2.11-.45c.84.27 1.72.47 2.62.59A2 2 0 0 1 22 16.92z"
+                    />
+                  </svg>
+                </span>
+                <a
+                  href="tel:+9600962996"
+                  class="text-[16px] leading-[1.7] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                >
+                  +96009 62996
+                </a>
+              </div>
+
+              <!-- Email -->
+              <div class="flex items-start gap-3">
+                <span
+                  class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center text-[#b04b67]"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.1"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 4h16v16H4z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m4 7 8 6 8-6"
+                    />
+                  </svg>
+                </span>
+                <a
+                  href="mailto:shinepetsgroomingstudio@gmail.com"
+                  class="text-[16px] leading-[1.7] text-[#7a7a7a] transition hover:text-[#b04b67] break-all"
+                >
+                  shinepetsgroomingstudio@gmail.com
+                </a>
+              </div>
+
+              <!-- Address -->
+              <div class="flex items-start gap-3">
+                <span
+                  class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center text-[#b04b67]"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.1"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0Z"
+                    />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </span>
+                <p class="text-[16px] leading-[1.7] text-[#7a7a7a]">
+                  Ground Floor, Tami Residency, 45,<br />
+                  Old Mamallapuram Rd, Padur, <br />Chennai, Tamil Nadu 603103
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="pt-6 text-center">
+          <p class="text-[15px] text-[#8a8a8a]">
+            © 2024 Shine Pets. Premium Care for Your Best Friends.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/hamburger-script.js"></script>
+    <script src="js/Animation.js"></script>
+    <script src="js/arrow.js"></script>
+  </body>
+</html>

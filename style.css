@@ -10,6 +10,34 @@ body, p {
   font-family: 'Nunito', sans-serif;
 }
 
+  .nav-underline {
+    position: absolute;
+    left: 50%;
+    bottom: -14px;
+    height: 3px;
+    width: 0;
+    border-radius: 9999px;
+    background: #4E8185;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover .nav-underline,
+  .nav-link.active .nav-underline {
+    width: 38px;
+  }
+
+  .nav-link.active {
+    color: #4E8185;
+    font-weight: 600;
+  }
+
+  .mobile-nav-link.active {
+    background-color: #f3fbf5;
+    color: #4E8185;
+    font-weight: 600;
+  }
+
 .reviews-swiper .swiper-wrapper {
   align-items: stretch;
 }
