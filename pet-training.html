@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Training</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-[#f7f7f7]">
+    <!-- HEADER -->
+    <header
+      class="w-full border-b border-black/5 bg-white shadow-sm fixed top-0 z-50 fade-in"
+    >
+      <div class="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
+        <!-- TOP BAR -->
+        <div class="flex h-[90px] items-center justify-between">
+          <!-- Logo -->
+          <a href="index.html" class="shrink-0 flex items-center">
+            <img
+              src="images/logo.png"
+              alt="Ramaniyam"
+              class="h-[70px] sm:h-[75px] md:h-[86px] w-auto object-contain"
+            />
+          </a>
+
+          <!-- DESKTOP NAV -->
+          <nav class="hidden lg:flex items-center gap-8">
+            <!-- Home -->
+            <a
+              href="index.html"
+              class="nav-link relative inline-flex items-center text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+            >
+              Home
+              <span class="nav-underline"></span>
+            </a>
+
+            <!-- About -->
+            <a
+              href="aboutus.html"
+              class="nav-link relative inline-flex items-center text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+            >
+              About
+              <span class="nav-underline"></span>
+            </a>
+
+            <!-- Services -->
+            <div class="relative group">
+              <button
+                type="button"
+                class="nav-link relative flex items-center gap-1 text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+              >
+                Services
+                <svg
+                  class="h-4 w-4 transition group-hover:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M19 9l-7 7-7-7" />
+                </svg>
+                <span class="nav-underline"></span>
+              </button>
+
+              <!-- Dropdown -->
+              <div
+                class="invisible absolute left-0 top-full z-50 mt-4 w-64 translate-y-2 rounded-2xl border border-black/5 bg-white p-3 opacity-0 shadow-xl transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
+              >
+                <a
+                  href="pet-boarding.html"
+                  class="dropdown-link block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
+                  >Pet Boarding</a
+                >
+                <a
+                  href="pet-training.html"
+                  class="dropdown-link block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
+                  >Pet Training</a
+                >
+                <a
+                  href="pet-servicing.html"
+                  class="dropdown-link block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
+                  >Pet Servicing</a
+                >
+                <a
+                  href="pet-swimming.html"
+                  class="dropdown-link block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
+                  >Pet Swimming</a
+                >
+              </div>
+            </div>
+
+            <!-- Gallery -->
+            <a
+              href="gallery.html"
+              class="nav-link relative inline-flex items-center text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+            >
+              Gallery
+              <span class="nav-underline"></span>
+            </a>
+
+            <!-- Contact -->
+            <a
+              href="contact-us.html"
+              class="nav-link relative inline-flex items-center text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+            >
+              Contact Us
+              <span class="nav-underline"></span>
+            </a>
+          </nav>
+
+          <!-- BUTTON -->
+          <div class="hidden lg:flex">
+            <a
+              href="#"
+              class="rounded-full bg-[#4E8185] px-7 py-3 text-white font-semibold hover:bg-[#3f6e72] transition"
+            >
+              Book Now
+            </a>
+          </div>
+
+          <!-- MOBILE BUTTON -->
+          <button
+            id="menuBtn"
+            class="lg:hidden h-11 w-11 flex items-center justify-center border rounded-xl"
+            type="button"
+            aria-label="Open menu"
+          >
+            <svg
+              id="menuIcon"
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <div id="mobileMenu" class="hidden border-t bg-white lg:hidden">
+        <div class="px-4 py-4 space-y-2">
+          <a
+            href="index.html"
+            class="mobile-nav-link block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-100"
+          >
+            Home
+          </a>
+
+          <a
+            href="aboutus.html"
+            class="mobile-nav-link block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-100"
+          >
+            About
+          </a>
+
+          <!-- Mobile Services -->
+          <div class="border rounded-xl">
+            <button
+              id="mobileServicesBtn"
+              class="w-full flex justify-between px-4 py-3 text-[#444]"
+              type="button"
+            >
+              <span>Services</span>
+              <span id="arrow" class="transition-transform duration-300"
+                >⌄</span
+              >
+            </button>
+
+            <div id="mobileServicesMenu" class="hidden px-3 pb-3">
+              <a
+                href="pet-boarding.html"
+                class="mobile-nav-link block px-3 py-2 rounded-lg"
+                >Pet Boarding</a
+              >
+              <a
+                href="pet-training.html"
+                class="mobile-nav-link block px-3 py-2 rounded-lg"
+                >Pet Training</a
+              >
+              <a
+                href="pet-servicing.html"
+                class="mobile-nav-link block px-3 py-2 rounded-lg"
+                >Pet Servicing</a
+              >
+              <a
+                href="pet-swimming.html"
+                class="mobile-nav-link block px-3 py-2 rounded-lg"
+                >Pet Swimming</a
+              >
+            </div>
+          </div>
+
+          <a
+            href="gallery.html"
+            class="mobile-nav-link block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-100"
+          >
+            Gallery
+          </a>
+
+          <a
+            href="contact-us.html"
+            class="mobile-nav-link block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-100"
+          >
+            Contact Us
+          </a>
+
+          <a
+            href="#"
+            class="block text-center mt-3 bg-[#4E8185] text-white py-3 rounded-full font-semibold"
+          >
+            Book Now
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="w-full bg-[#f3f2ef] mt-16 overflow-hidden">
+        <div class="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8 xl:px-10">
+          <div
+            class="grid min-h-[560px] items-center gap-10 py-10 md:py-14 lg:grid-cols-[1.02fr_1fr] lg:gap-16 xl:min-h-[620px] xl:py-16"
+          >
+            <!-- Left -->
+            <div class="max-w-[620px]">
+              <!-- Tag -->
+              <div class="mb-6">
+                <span
+                  class="inline-flex fade-left rounded-full bg-[#efcdbf] px-4 py-[8px] text-[10px] font-semibold uppercase tracking-[0.14em] text-[#8b6b61] sm:text-[11px]"
+                >
+                  Premium Training Academy
+                </span>
+              </div>
+
+              <!-- Heading -->
+              <h1
+                class="max-w-[760px] fade-right text-[44px] font-black leading-[0.94] tracking-[-0.05em] text-[#111111] sm:text-[58px] md:text-[68px] lg:text-[74px] xl:text-[82px]"
+              >
+                Master the Art of
+                <br />
+                <span class="text-[#0d8b2f] italic">Gentle</span>
+                Guidance
+              </h1>
+
+              <!-- Paragraph -->
+              <p
+                class="mt-7 fade-down max-w-[620px] text-[18px] leading-[1.55] text-[#5f685f] sm:text-[20px] lg:text-[21px]"
+              >
+                Transform your bond with science-based positive reinforcement.
+                Our elite trainers create a sanctuary of learning for your
+                canine companion.
+              </p>
+
+              <!-- Buttons -->
+              <div class="mt-9 flex flex-wrap gap-4">
+                <a
+                  href="#"
+                  class="inline-flex fade-left h-[56px] items-center justify-center rounded-full bg-[#118c2f] px-7 text-[16px] font-semibold text-white shadow-[0_10px_22px_rgba(17,140,47,0.22)] transition duration-300 hover:translate-y-[-2px] hover:bg-[#0f7d2a]"
+                >
+                  Enroll Your Pet
+                </a>
+
+                <a
+                  href="#"
+                  class="inline-flex fade-right h-[56px] items-center justify-center rounded-full bg-[#dfddda] px-7 text-[16px] font-semibold text-[#333333] transition duration-300 hover:translate-y-[-2px] hover:bg-[#d6d3cf]"
+                >
+                  View Curriculum
+                </a>
+              </div>
+            </div>
+
+            <!-- Right -->
+            <div class="relative flex justify-center lg:justify-end">
+              <!-- Glow -->
+              <div
+                class="absolute right-[8%] top-[8%] h-[280px] w-[280px] rounded-full bg-[#79d36a]/25 blur-[90px] sm:h-[320px] sm:w-[320px] lg:h-[360px] lg:w-[360px]"
+              ></div>
+
+              <!-- Image card -->
+              <div
+                class="relative animate-up w-full max-w-[360px] rotate-[2deg] overflow-hidden rounded-[34px] shadow-[0_24px_60px_rgba(0,0,0,0.18)] sm:max-w-[420px] lg:max-w-[470px] xl:max-w-[520px]"
+              >
+                <img
+                  src="images/pet-traing.png"
+                  alt="Dog training"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- section 2 -->
+      <section
+        class="w-full overflow-hidden bg-[#f3f2ef] py-10 sm:py-12 lg:py-16"
+      >
+        <div class="mx-auto max-w-[1380px] px-4 sm:px-6 lg:px-8">
+          <div
+            class="grid items-center gap-10 lg:grid-cols-[1.02fr_1fr] lg:gap-14 xl:gap-20"
+          >
+            <!-- Left -->
+            <div class="relative fade-left mx-auto w-full max-w-[620px]">
+              <!-- Main image block -->
+              <div
+                class="overflow-hidden rounded-[28px] bg-[#2f5c6f] shadow-[0_18px_40px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_28px_60px_rgba(0,0,0,0.14)]"
+              >
+                <img
+                  src="images/philosophy-main.png"
+                  alt="Positive training philosophy"
+                  class="h-[420px] w-full object-cover sm:h-[500px] lg:h-[560px]"
+                />
+              </div>
+
+              <!-- Floating card -->
+              <div
+                class="absolute animate-up bottom-[-22px] left-1/2 z-10 w-[86%] hidden md:block max-w-[250px] -translate-x-1/2 rounded-[26px] bg-white p-5 shadow-[0_18px_45px_rgba(0,0,0,0.10)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_26px_55px_rgba(0,0,0,0.14)] sm:bottom-[-26px] sm:left-auto sm:right-[-6px] sm:translate-x-0"
+              >
+                <div
+                  class="flex h-11 w-11 items-center justify-center rounded-full bg-[#eef7ee]"
+                >
+                  <img
+                    src="icons/icon-heart.png"
+                    alt="Respect icon"
+                    class="h-6 w-6 object-contain"
+                  />
+                </div>
+
+                <h3
+                  class="mt-4 text-[18px] font-bold tracking-[-0.02em] text-[#1d1d1d]"
+                >
+                  Respect First
+                </h3>
+                <p class="mt-3 text-[14px] leading-[1.65] text-[#676767]">
+                  We never use fear or pain. Every command is built on a
+                  foundation of mutual trust and joy.
+                </p>
+              </div>
+            </div>
+
+            <!-- Right -->
+            <div class="pt-10 sm:pt-12 lg:pt-0">
+              <h2
+                class="text-[34px] fade-left font-extrabold leading-[1.03] tracking-[-0.04em] text-[#161616] sm:text-[46px] md:text-[56px] lg:text-[62px]"
+              >
+                Our Philosophy:
+                <span class="mt-1 block text-[#07852c]"
+                  >Positive Connection</span
+                >
+              </h2>
+
+              <div class="mt-8 space-y-7 sm:mt-10 sm:space-y-8">
+                <!-- Item 1 -->
+                <div
+                  class="group fade-left flex gap-4 rounded-[20px] transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div
+                    class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#d8ead1]"
+                  >
+                    <img
+                      src="icons/icon-science.png"
+                      alt="Science icon"
+                      class="h-5 w-5 object-contain"
+                    />
+                  </div>
+                  <div>
+                    <h3
+                      class="text-[20px] font-bold tracking-[-0.02em] text-[#202020]"
+                    >
+                      Science-Based Methods
+                    </h3>
+                    <p class="mt-2 text-[15px] leading-[1.7] text-[#666666]">
+                      Utilizing the latest in canine behavioral psychology to
+                      encourage voluntary cooperation rather than forced
+                      compliance.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div
+                  class="group fade-right flex gap-4 rounded-[20px] transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div
+                    class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#f1e3da]"
+                  >
+                    <img
+                      src="icons/icon-reward.png"
+                      alt="Reward icon"
+                      class="h-5 w-5 object-contain"
+                    />
+                  </div>
+                  <div>
+                    <h3
+                      class="text-[20px] font-bold tracking-[-0.02em] text-[#202020]"
+                    >
+                      Reward Mastery
+                    </h3>
+                    <p class="mt-2 text-[15px] leading-[1.7] text-[#666666]">
+                      Identifying what truly motivates your pet—whether it’s
+                      high-value treats, toys, or praise—to accelerate the
+                      learning process.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div
+                  class="group fade-left flex gap-4 rounded-[20px] transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div
+                    class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#f3d6de]"
+                  >
+                    <img
+                      src="icons/icon-bond.png"
+                      alt="Bond icon"
+                      class="h-5 w-5 object-contain"
+                    />
+                  </div>
+                  <div>
+                    <h3
+                      class="text-[20px] font-bold tracking-[-0.02em] text-[#202020]"
+                    >
+                      Lasting Bonds
+                    </h3>
+                    <p class="mt-2 text-[15px] leading-[1.7] text-[#666666]">
+                      Our training extends beyond the classroom, giving you the
+                      tools to communicate effectively for a lifetime.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="w-full bg-[#f3f2ef] py-8 sm:py-10 lg:py-12">
+  <div class="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-5 lg:grid-cols-[280px_minmax(0,1fr)]">
+      
+      <!-- LEFT COLUMN -->
+      <div class="grid gap-5">
+        
+        <!-- Puppy Basics Card -->
+        <div class="group animate-up rounded-[28px] bg-white p-5 shadow-[0_10px_30px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
+          <div class="overflow-hidden  rounded-[24px] bg-[#0e0d10]">
+            <!-- PUT IMAGE HERE -->
+            <img
+              src="images/puppy-basics.jpg"
+              alt="Puppy Basics"
+              class="h-[140px] md:hidden lg:block w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
+
+          <div class="pt-5">
+            <h3 class="text-[22px] font-bold tracking-[-0.03em] text-[#202020]">
+              Puppy Basics
+            </h3>
+
+            <p class="mt-3 text-[15px] leading-[1.65] text-[#6c6c6c]">
+              Socialization, potty training, and the fundamentals of focus for pups aged 8-20 weeks.
+            </p>
+
+            <!-- <div class="mt-5 border-t border-[#ece8e2] pt-5">
+              <a
+                href="#"
+                class="flex items-center justify-between text-[15px] font-semibold text-[#168b35] transition-colors duration-300 hover:text-[#0f6f29]"
+              >
+                <span>6-Week Course</span>
+                <span class="text-[22px] leading-none">→</span>
+              </a>
+            </div> -->
+          </div>
+        </div>
+
+        <!-- Agility Mastery Card -->
+        <div class="group animate-down rounded-[28px] bg-[#ecebe7] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.02)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_18px_40px_rgba(0,0,0,0.06)]">
+          <div class="flex h-[54px] w-full items-center rounded-[18px] bg-[#f3f2ef] px-5">
+            <!-- PUT ICON HERE -->
+            <img
+              src="icons/icon-agility.png"
+              alt="Agility icon"
+              class="h-7 w-7 object-contain"
+            />
+          </div>
+
+          <div class="pt-6">
+            <h3 class="text-[22px] font-bold tracking-[-0.03em] text-[#202020]">
+              Agility Mastery
+            </h3>
+
+            <p class="mt-3 text-[15px] leading-[1.65] text-[#6c6c6c]">
+              A high-energy course focusing on tunnel work, jumps, and weave poles. Perfect for athletic breeds.
+            </p>
+
+            <div class="mt-6 border-t border-[#ddd8d1] pt-5">
+              <a
+                href="#"
+                class="flex items-center justify-between text-[15px] font-semibold text-[#2d2d2d] transition-colors duration-300 hover:text-black"
+              >
+                <span>Expert Track</span>
+                <!-- PUT SMALL ICON HERE -->
+                <img
+                  src="icons/icon-small-arrow.png"
+                  alt="Arrow"
+                  class="h-4 w-4 object-contain opacity-80"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="grid gap-5">
+        
+        <!-- Advanced Obedience -->
+        <div class="relative animate-down overflow-hidden rounded-[30px] bg-[#1e9836] p-7 sm:p-8 lg:min-h-[300px] lg:p-9">
+         
+
+          <!-- right darker overlay -->
+          <div class="absolute inset-y-0 right-0 w-[50%] bg-black/8"></div>
+
+          <div class="relative z-10 max-w-[520px]">
+            <h3 class="text-[30px] font-bold tracking-[-0.04em] text-white sm:text-[34px]">
+              Advanced Obedience
+            </h3>
+
+            <p class="mt-4 max-w-[500px] text-[16px] leading-[1.65] text-white/80">
+              For the refined canine. Master off-leash reliability, complex commands, and distraction management in urban environments.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+              <span class="inline-flex rounded-full bg-white/14 px-4 py-2 text-[13px] font-medium text-white/90 backdrop-blur-sm">
+                Off-Leash Skills
+              </span>
+              <span class="inline-flex rounded-full bg-white/14 px-4 py-2 text-[13px] font-medium text-white/90 backdrop-blur-sm">
+                Distraction Proofing
+              </span>
+            </div>
+
+            <div class="mt-9">
+              <a
+                href="#"
+                class="inline-flex h-[52px] items-center justify-center rounded-full bg-white px-7 text-[15px] font-semibold text-[#198735] shadow-[0_10px_25px_rgba(0,0,0,0.14)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_35px_rgba(0,0,0,0.18)]"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Behavioral Therapy -->
+        <div class="group animate-up rounded-[30px] bg-[#f0c5b7] p-7 sm:p-8 lg:min-h-[278px] lg:p-9 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_18px_40px_rgba(0,0,0,0.05)]">
+          <div class="grid items-center gap-6 lg:grid-cols-[1fr_200px]">
+            <div>
+              <h3 class="text-[30px] font-bold tracking-[-0.04em] text-[#8a5e4d]">
+                Behavioral Therapy
+              </h3>
+
+              <p class="mt-4 max-w-[560px] text-[16px] leading-[1.65] text-[#8a6b60]">
+                Private sessions targeting anxiety, aggression, or leash reactivity. We heal the mind, not just train the body.
+              </p>
+
+              <a
+                href="#"
+                class="mt-6 inline-flex text-[16px] font-semibold text-[#7d5648] transition-colors duration-300 hover:text-[#684539]"
+              >
+                Schedule a Private Evaluation
+              </a>
+            </div>
+
+            <div class="flex justify-start lg:justify-center">
+              <div class="flex h-[170px] w-[170px] items-center justify-center rounded-[28px] bg-[#f6d8ce]">
+                <!-- PUT ICON HERE -->
+                <img
+                  src="icons/icon-therapy.png"
+                  alt="Therapy icon"
+                  class="h-16 w-16 object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- section 3 -->
+      <section class="w-full bg-[#f3f2ef] animate-up py-10 sm:py-12 lg:py-16">
+        <div class="mx-auto max-w-[1380px] px-4 sm:px-6 lg:px-8">
+          <div
+            class="relative overflow-hidden rounded-[28px] bg-[#299345] px-6 py-14 text-center sm:px-10 sm:py-16 lg:rounded-[32px] lg:px-16 lg:py-20"
+          >
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0">
+              <img
+                src="images/dog-face.png"
+                alt="Dog background"
+                class="h-full w-full object-cover object-center opacity-25"
+              />
+            </div>
+
+            <!-- Content -->
+            <div class="relative z-10 mx-auto max-w-[760px]">
+              <h2
+                class="text-[32px] fade-left font-extrabold leading-[1.05] tracking-[-0.04em] text-white sm:text-[42px] md:text-[52px] lg:text-[60px]"
+              >
+                Ready for a Better Kind of Care?
+              </h2>
+
+              <p
+                class="mx-auto mt-5 fade-right max-w-[560px] text-[15px] leading-[1.7] text-white/75 sm:text-[16px] lg:text-[18px]"
+              >
+                Spaces in our sanctuary are limited to ensure personalized
+                attention. Book your initial consultation today.
+              </p>
+
+              <div class="mt-8 sm:mt-10">
+                <a
+                  href="#"
+                  class="inline-flex fade-in min-h-[54px] items-center justify-center rounded-full bg-white px-8 text-[15px] font-semibold text-[#1f8c3b] shadow-[0_10px_30px_rgba(0,0,0,0.16)] transition duration-300 hover:scale-[1.03] hover:shadow-[0_14px_35px_rgba(0,0,0,0.2)] sm:min-h-[58px] sm:px-10 sm:text-[16px]"
+                >
+                  Reserve Spot Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-[#f5f5f1] px-4 pt-14 pb-6 sm:px-6 lg:px-8 border-t border-black/20 animate-up"
+    >
+      <div class="mx-auto max-w-[1400px]">
+        <!-- Top Footer -->
+        <div
+          class="grid grid-cols-1 gap-10 border-b border-black/5 pb-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12"
+        >
+          <!-- Brand -->
+          <div>
+            <h3
+              class="text-[34px] font-extrabold tracking-[-0.03em] text-[#b04b67]"
+            >
+              Shine Pets
+            </h3>
+
+            <p
+              class="mt-5 max-w-[280px] text-[16px] leading-[1.9] text-[#7a7a7a]"
+            >
+              Premium care facility dedicated to the health and happiness of
+              your pets. Professional, trustworthy, and organic.
+            </p>
+
+            <!-- Social Icons Below Paragraph -->
+            <div class="mt-6 flex items-center gap-3">
+              <a
+                href="#"
+                class="flex h-11 w-11 items-center justify-center rounded-full bg-[#ecebe6] text-[#444] transition hover:bg-[#b04b67] hover:text-white"
+                aria-label="Instagram"
+              >
+                <svg
+                  class="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <circle cx="17.5" cy="6.5" r="1"></circle>
+                </svg>
+              </a>
+
+              <a
+                href="#"
+                class="flex h-11 w-11 items-center justify-center rounded-full bg-[#ecebe6] text-[#444] transition hover:bg-[#b04b67] hover:text-white"
+                aria-label="Facebook"
+              >
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M13.5 21v-8.1h2.7l.4-3.1h-3.1V7.8c0-.9.3-1.5 1.6-1.5h1.7V3.5c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.2v2.2H7.7v3.1h2.6V21h3.2z"
+                  />
+                </svg>
+              </a>
+
+              <a
+                href="#"
+                class="flex h-11 w-11 items-center justify-center rounded-full bg-[#ecebe6] text-[#444] transition hover:bg-[#b04b67] hover:text-white"
+                aria-label="X"
+              >
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M18.9 2H22l-6.8 7.8L23 22h-6.1l-4.8-6.3L6.6 22H3.5l7.2-8.2L1 2h6.3l4.3 5.8L18.9 2zm-1.1 18h1.7L6.2 3.9H4.4L17.8 20z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Services -->
+          <div>
+            <h4 class="text-[24px] font-bold tracking-[-0.02em] text-[#1f1f1f]">
+              Services
+            </h4>
+
+            <ul class="mt-5 space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Pet Boarding</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Pet Training</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Pet Swimming</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Pet Grooming</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h4 class="text-[24px] font-bold tracking-[-0.02em] text-[#1f1f1f]">
+              Company
+            </h4>
+
+            <ul class="mt-5 space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Terms of Service</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Us -->
+          <div>
+            <h4 class="text-[24px] font-bold tracking-[-0.02em] text-[#1f1f1f]">
+              Contact Us
+            </h4>
+
+            <div class="mt-5 space-y-4">
+              <!-- Phone -->
+              <div class="flex items-start gap-3">
+                <span
+                  class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center text-[#b04b67]"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.1"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.78.59 2.62a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.46-1.16a2 2 0 0 1 2.11-.45c.84.27 1.72.47 2.62.59A2 2 0 0 1 22 16.92z"
+                    />
+                  </svg>
+                </span>
+                <a
+                  href="tel:+9600962996"
+                  class="text-[16px] leading-[1.7] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                >
+                  +96009 62996
+                </a>
+              </div>
+
+              <!-- Email -->
+              <div class="flex items-start gap-3">
+                <span
+                  class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center text-[#b04b67]"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.1"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 4h16v16H4z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m4 7 8 6 8-6"
+                    />
+                  </svg>
+                </span>
+                <a
+                  href="mailto:shinepetsgroomingstudio@gmail.com"
+                  class="text-[16px] leading-[1.7] text-[#7a7a7a] transition hover:text-[#b04b67] break-all"
+                >
+                  shinepetsgroomingstudio@gmail.com
+                </a>
+              </div>
+
+              <!-- Address -->
+              <div class="flex items-start gap-3">
+                <span
+                  class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center text-[#b04b67]"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.1"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0Z"
+                    />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </span>
+                <p class="text-[16px] leading-[1.7] text-[#7a7a7a]">
+                  Ground Floor, Tami Residency, 45,<br />
+                  Old Mamallapuram Rd, Padur, <br />Chennai, Tamil Nadu 603103
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="pt-6 text-center">
+          <p class="text-[15px] text-[#8a8a8a]">
+            © 2024 Shine Pets. Premium Care for Your Best Friends.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/hamburger-script.js"></script>
+    <script src="js/Animation.js"></script>
+    <script src="js/arrow.js"></script>
+  </body>
+</html>
