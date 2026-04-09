@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-[#f7f7f7]">
+    <!-- HEADER -->
+    <header
+      class="w-full border-b border-black/5 bg-white shadow-sm fixed top-0 z-50 fade-in"
+    >
+      <div class="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
+        <!-- TOP BAR -->
+        <div class="flex h-[90px] items-center justify-between">
+          <!-- Logo -->
+          <a href="index.html" class="shrink-0 flex items-center">
+            <img
+              src="images/logo.png"
+              alt="Ramaniyam"
+              class="h-[70px] sm:h-[75px] md:h-[86px] w-auto object-contain"
+            />
+          </a>
+
+          <!-- DESKTOP NAV -->
+          <nav class="hidden lg:flex items-center gap-8">
+            <!-- Home -->
+            <a
+              href="index.html"
+              class="nav-link relative inline-flex items-center text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+            >
+              Home
+              <span class="nav-underline"></span>
+            </a>
+
+            <!-- About -->
+            <a
+              href="aboutus.html"
+              class="nav-link relative inline-flex items-center text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+            >
+              About
+              <span class="nav-underline"></span>
+            </a>
+
+            <!-- Services -->
+            <div class="relative group">
+              <button
+                type="button"
+                class="nav-link relative flex items-center gap-1 text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+              >
+                Services
+                <svg
+                  class="h-4 w-4 transition group-hover:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M19 9l-7 7-7-7" />
+                </svg>
+                <span class="nav-underline"></span>
+              </button>
+
+              <!-- Dropdown -->
+              <div
+                class="invisible absolute left-0 top-full z-50 mt-4 w-64 translate-y-2 rounded-2xl border border-black/5 bg-white p-3 opacity-0 shadow-xl transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
+              >
+                <a
+                  href="pet-boarding.html"
+                  class="dropdown-link block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
+                  >Pet Boarding</a
+                >
+                <a
+                  href="pet-training.html"
+                  class="dropdown-link block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
+                  >Pet Training</a
+                >
+                <a
+                  href="pet-servicing.html"
+                  class="dropdown-link block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
+                  >Pet Servicing</a
+                >
+                <a
+                  href="pet-swimming.html"
+                  class="dropdown-link block rounded-xl px-4 py-3 text-[14px] hover:bg-[#f3fbf5] hover:text-[#4E8185]"
+                  >Pet Swimming</a
+                >
+              </div>
+            </div>
+
+            <!-- Gallery -->
+            <a
+              href="gallery.html"
+              class="nav-link relative inline-flex items-center text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+            >
+              Gallery
+              <span class="nav-underline"></span>
+            </a>
+
+            <!-- Contact -->
+            <a
+              href="contact-us.html"
+              class="nav-link relative inline-flex items-center text-[15px] font-medium text-[#444] hover:text-[#4E8185] transition"
+            >
+              Contact Us
+              <span class="nav-underline"></span>
+            </a>
+          </nav>
+
+          <!-- BUTTON -->
+          <div class="hidden lg:flex">
+            <a
+              href="#"
+              class="rounded-full bg-[#4E8185] px-7 py-3 text-white font-semibold hover:bg-[#3f6e72] transition"
+            >
+              Book Now
+            </a>
+          </div>
+
+          <!-- MOBILE BUTTON -->
+          <button
+            id="menuBtn"
+            class="lg:hidden h-11 w-11 flex items-center justify-center border rounded-xl"
+            type="button"
+            aria-label="Open menu"
+          >
+            <svg
+              id="menuIcon"
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <div id="mobileMenu" class="hidden border-t bg-white lg:hidden">
+        <div class="px-4 py-4 space-y-2">
+          <a
+            href="index.html"
+            class="mobile-nav-link block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-100"
+          >
+            Home
+          </a>
+
+          <a
+            href="aboutus.html"
+            class="mobile-nav-link block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-100"
+          >
+            About
+          </a>
+
+          <!-- Mobile Services -->
+          <div class="border rounded-xl">
+            <button
+              id="mobileServicesBtn"
+              class="w-full flex justify-between px-4 py-3 text-[#444]"
+              type="button"
+            >
+              <span>Services</span>
+              <span id="arrow" class="transition-transform duration-300"
+                >⌄</span
+              >
+            </button>
+
+            <div id="mobileServicesMenu" class="hidden px-3 pb-3">
+              <a
+                href="pet-boarding.html"
+                class="mobile-nav-link block px-3 py-2 rounded-lg"
+                >Pet Boarding</a
+              >
+              <a
+                href="pet-training.html"
+                class="mobile-nav-link block px-3 py-2 rounded-lg"
+                >Pet Training</a
+              >
+              <a
+                href="pet-servicing.html"
+                class="mobile-nav-link block px-3 py-2 rounded-lg"
+                >Pet Servicing</a
+              >
+              <a
+                href="pet-swimming.html"
+                class="mobile-nav-link block px-3 py-2 rounded-lg"
+                >Pet Swimming</a
+              >
+            </div>
+          </div>
+
+          <a
+            href="gallery.html"
+            class="mobile-nav-link block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-100"
+          >
+            Gallery
+          </a>
+
+          <a
+            href="contact-us.html"
+            class="mobile-nav-link block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-100"
+          >
+            Contact Us
+          </a>
+
+          <a
+            href="#"
+            class="block text-center mt-3 bg-[#4E8185] text-white py-3 rounded-full font-semibold"
+          >
+            Book Now
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="mt-10">
+     <section class="gallery-section relative overflow-hidden bg-[linear-gradient(180deg,#fcfdff_0%,#f6f9fc_42%,#edf5ff_100%)] py-20 lg:py-24">
+  <!-- Background layers -->
+  <div class="pointer-events-none absolute inset-0">
+    <div class="absolute left-[-140px] top-0 h-96 w-96 rounded-full bg-pink-200/30 blur-3xl"></div>
+    <div class="absolute right-[-120px] top-24 h-80 w-80 rounded-full bg-sky-200/30 blur-3xl"></div>
+    <div class="absolute bottom-[-120px] left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-amber-100/30 blur-3xl"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.6),transparent_55%)]"></div>
+  </div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <!-- top premium layout -->
+    <div class="mb-16 grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+      <!-- left content -->
+      <div class="relative z-10">
+        <div class="inline-flex fade-left items-center rounded-full border border-white/70 bg-white/80 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#7c6f64] shadow-[0_8px_30px_rgba(15,23,42,0.06)] backdrop-blur-xl">
+          Pet Moments Gallery
+        </div>
+
+        <h2 class="mt-5 fade-right text-4xl font-bold leading-[0.92] tracking-tight text-slate-900 sm:text-5xl lg:text-7xl">
+          Crafted with
+          <span class="mt-1 block bg-gradient-to-r from-pink-500 via-orange-400 to-sky-500 bg-clip-text text-transparent">
+            Warmth & Wonder
+          </span>
+        </h2>
+
+        <p class="mt-6 fade-left max-w-2xl text-sm leading-7 text-slate-600 sm:text-base lg:max-w-3xl lg:text-[17px] lg:leading-8">
+          Discover a beautifully curated collection of playful expressions, quiet cuddles, and unforgettable pet personalities. Designed to feel luxurious yet full of heart, this gallery transforms everyday moments into a premium visual experience filled with joy, affection, and character.
+        </p>
+
+        <div class="mt-8 animate-down flex flex-wrap gap-3">
+          <div class="rounded-2xl border border-white/70 bg-white/80 px-5 py-3 shadow-[0_10px_30px_rgba(15,23,42,0.06)] backdrop-blur">
+            <p class="text-[11px] uppercase tracking-[0.24em] text-slate-500">Curated Frames</p>
+            <p class="mt-1 text-xl font-bold text-slate-900">15 Premium Shots</p>
+          </div>
+
+          <div class="rounded-2xl animate-down border border-white/70 bg-white/80 px-5 py-3 shadow-[0_10px_30px_rgba(15,23,42,0.06)] backdrop-blur">
+            <p class="text-[11px] uppercase tracking-[0.24em] text-slate-500">Visual Mood</p>
+            <p class="mt-1 text-xl font-bold text-slate-900">Soft · Elegant · Joyful</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- right featured card -->
+      <div class="relative z-10">
+        <div class="absolute -left-6 -top-6 hidden h-24 w-24 rounded-[26px] border border-white/50 bg-white/30 shadow-[0_10px_30px_rgba(15,23,42,0.05)] backdrop-blur-xl lg:block"></div>
+        <div class="absolute -bottom-6 -right-6 hidden h-28 w-28 rounded-full border border-white/50 bg-white/30 shadow-[0_10px_30px_rgba(15,23,42,0.05)] backdrop-blur-xl lg:block"></div>
+
+        <div class="group animate-up relative overflow-hidden rounded-[34px] border border-white/70 bg-white/60 p-3 shadow-[0_25px_80px_rgba(15,23,42,0.10)] backdrop-blur-2xl">
+          <div class="relative h-[340px] overflow-hidden rounded-[26px] sm:h-[420px]">
+            <img src="images/p2.jpg" alt="Featured pet image" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent"></div>
+            <div class="absolute inset-0 opacity-0 transition duration-700 group-hover:opacity-100">
+              <div class="absolute -left-1/3 top-0 h-full w-1/3 rotate-12 bg-white/20 blur-2xl transition-all duration-1000 group-hover:left-[130%]"></div>
+            </div>
+
+            <div class="absolute bottom-0 left-0 w-full p-6 text-white">
+              <p class="text-[11px] uppercase tracking-[0.3em] text-white/70">Featured Moment</p>
+              <h3 class="mt-2 text-2xl font-semibold sm:text-3xl">Golden Joy</h3>
+              <p class="mt-2 max-w-md text-sm leading-6 text-white/80">
+                A premium first look into the gallery — vibrant, affectionate, and full of personality.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Route SVG background -->
+    <div class="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+      <svg id="galleryRoutes" class="h-full w-full">
+        <defs>
+          <linearGradient id="routeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f9a8d4"></stop>
+            <stop offset="45%" stop-color="#fb923c"></stop>
+            <stop offset="100%" stop-color="#7dd3fc"></stop>
+          </linearGradient>
+
+          <filter id="routeGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="6" result="coloredBlur"></feGaussianBlur>
+            <feMerge>
+              <feMergeNode in="coloredBlur"></feMergeNode>
+              <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+          </filter>
+        </defs>
+
+        <path
+          id="galleryPathGlow"
+          d=""
+          fill="none"
+          stroke="url(#routeGradient)"
+          stroke-width="8"
+          opacity="0.12"
+          filter="url(#routeGlow)"
+          stroke-linecap="round"
+        ></path>
+
+        <path
+          id="galleryPath"
+          d=""
+          fill="none"
+          stroke="url(#routeGradient)"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-dasharray="8 12"
+          opacity="0.48"
+        ></path>
+
+        <g id="routeDots"></g>
+      </svg>
+    </div>
+
+    <!-- zig zag gallery -->
+    <div class="relative z-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+
+      <div class="tilt-card fade-left group relative h-[280px] sm:h-[300px] lg:mt-0 xl:mt-0 overflow-hidden rounded-[32px] border border-white/70 bg-white/80 p-2 shadow-[0_14px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_80px_rgba(15,23,42,0.16)]">
+        <div class="relative h-full overflow-hidden rounded-[26px]">
+          <img src="images/p2.jpg" alt="Golden retriever smiling" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-5 text-white">
+            <p class="text-xl font-semibold">Golden Joy</p>
+            <p class="mt-1 text-sm text-white/80">Playful sunshine energy</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tilt-card fade-right group relative h-[340px] sm:h-[360px] lg:mt-16 xl:mt-20 overflow-hidden rounded-[32px] border border-white/70 bg-white/80 p-2 shadow-[0_14px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_80px_rgba(15,23,42,0.16)]">
+        <div class="relative h-full overflow-hidden rounded-[26px]">
+          <img src="images/pr-2.jpeg" alt="Cute cat closeup" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-5 text-white">
+            <p class="text-xl font-semibold">Soft Whiskers</p>
+            <p class="mt-1 text-sm text-white/80">Elegant feline charm</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tilt-card animate-up group relative h-[260px] sm:h-[280px] lg:mt-0 xl:-mt-6 overflow-hidden rounded-[32px] border border-white/70 bg-white/80 p-2 shadow-[0_14px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_80px_rgba(15,23,42,0.16)]">
+        <div class="relative h-full overflow-hidden rounded-[26px]">
+          <img src="images/p3.jpg" alt="Dog outdoors" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-5 text-white">
+            <p class="text-xl font-semibold">Outdoor Buddy</p>
+            <p class="mt-1 text-sm text-white/80">Adventure with paws</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tilt-card animate-down group relative h-[320px] sm:h-[340px] lg:-mt-8 xl:-mt-10 overflow-hidden rounded-[32px] border border-white/70 bg-white/80 p-2 shadow-[0_14px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_80px_rgba(15,23,42,0.16)]">
+        <div class="relative h-full overflow-hidden rounded-[26px]">
+          <img src="images/gallery-2.jpg" alt="Puppy portrait" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-5 text-white">
+            <p class="text-xl font-semibold">Puppy Eyes</p>
+            <p class="mt-1 text-sm text-white/80">Pure cute overload</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tilt-card fade-in group relative h-[280px] sm:h-[300px] lg:mt-12 xl:mt-16 overflow-hidden rounded-[32px] border border-white/70 bg-white/80 p-2 shadow-[0_14px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_80px_rgba(15,23,42,0.16)]">
+        <div class="relative h-full overflow-hidden rounded-[26px]">
+          <img src="images/team-1.jpg" alt="Sleeping cat" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-5 text-white">
+            <p class="text-xl font-semibold">Nap Time</p>
+            <p class="mt-1 text-sm text-white/80">Calm cozy comfort</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tilt-card fade-left group relative h-[360px] sm:h-[390px] lg:-mt-6 xl:mt-0 overflow-hidden rounded-[32px] border border-white/70 bg-white/80 p-2 shadow-[0_14px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_80px_rgba(15,23,42,0.16)]">
+        <div class="relative h-full overflow-hidden rounded-[26px]">
+          <img src="images/p1.jpg" alt="White dog portrait" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-5 text-white">
+            <p class="text-xl font-semibold">Snowy Paws</p>
+            <p class="mt-1 text-sm text-white/80">Fresh and graceful</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tilt-card fade-right group relative h-[270px] sm:h-[290px] lg:mt-10 xl:mt-14 overflow-hidden rounded-[32px] border border-white/70 bg-white/80 p-2 shadow-[0_14px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_80px_rgba(15,23,42,0.16)]">
+        <div class="relative h-full overflow-hidden rounded-[26px]">
+          <img src="images/pet-traing.png" alt="French bulldog" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-5 text-white">
+            <p class="text-xl font-semibold">Bold Buddy</p>
+            <p class="mt-1 text-sm text-white/80">Stylish little champ</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tilt-card animate-up group relative h-[330px] sm:h-[360px] lg:-mt-8 xl:-mt-10 overflow-hidden rounded-[32px] border border-white/70 bg-white/80 p-2 shadow-[0_14px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_80px_rgba(15,23,42,0.16)]">
+        <div class="relative h-full overflow-hidden rounded-[26px]">
+          <img src="images/gallery-4.jpg" alt="Royal dog portrait" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-5 text-white">
+            <p class="text-xl font-semibold">Royal Dog</p>
+            <p class="mt-1 text-sm text-white/80">Calm luxurious gaze</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tilt-card animate-down group relative h-[280px] sm:h-[300px] lg:mt-14 xl:mt-20 overflow-hidden rounded-[32px] border border-white/70 bg-white/80 p-2 shadow-[0_14px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_80px_rgba(15,23,42,0.16)]">
+        <div class="relative h-full overflow-hidden rounded-[26px]">
+          <img src="images/story-pet.jpg" alt="Lazy pet moment" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-5 text-white">
+            <p class="text-xl font-semibold">Lazy Afternoon</p>
+            <p class="mt-1 text-sm text-white/80">Relaxed and adorable</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tilt-card fade-in group relative h-[350px] sm:h-[380px] lg:-mt-4 xl:mt-0 overflow-hidden rounded-[32px] border border-white/70 bg-white/80 p-2 shadow-[0_14px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_80px_rgba(15,23,42,0.16)]">
+        <div class="relative h-full overflow-hidden rounded-[26px]">
+          <img src="images/puppy-basics.jpg" alt="Small dog portrait" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-5 text-white">
+            <p class="text-xl font-semibold">Tiny Explorer</p>
+            <p class="mt-1 text-sm text-white/80">Small paws big heart</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tilt-card fade-left group relative h-[270px] sm:h-[290px] lg:mt-10 xl:mt-14 overflow-hidden rounded-[32px] border border-white/70 bg-white/80 p-2 shadow-[0_14px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_80px_rgba(15,23,42,0.16)]">
+        <div class="relative h-full overflow-hidden rounded-[26px]">
+          <img src="images/r-3.jpeg" alt="Pet close portrait" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-5 text-white">
+            <p class="text-xl font-semibold">Velvet Face</p>
+            <p class="mt-1 text-sm text-white/80">Soft premium beauty</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tilt-card fade-right group relative h-[320px] sm:h-[350px] lg:-mt-8 xl:-mt-10 overflow-hidden rounded-[32px] border border-white/70 bg-white/80 p-2 shadow-[0_14px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_80px_rgba(15,23,42,0.16)]">
+        <div class="relative h-full overflow-hidden rounded-[26px]">
+          <img src="images/gallery-1.jpg" alt="Happy dog smiling" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-5 text-white">
+            <p class="text-xl font-semibold">Smile Patrol</p>
+            <p class="mt-1 text-sm text-white/80">Always full of joy</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tilt-card animate-up group relative h-[260px] sm:h-[280px] lg:mt-12 xl:mt-16 overflow-hidden rounded-[32px] border border-white/70 bg-white/80 p-2 shadow-[0_14px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_80px_rgba(15,23,42,0.16)]">
+        <div class="relative h-full overflow-hidden rounded-[26px]">
+          <img src="images/pets-room.jpg" alt="Dog in room" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-5 text-white">
+            <p class="text-xl font-semibold">Garden Steps</p>
+            <p class="mt-1 text-sm text-white/80">Fresh playful strolls</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tilt-card animate-down group relative h-[350px] sm:h-[380px] lg:-mt-6 xl:mt-0 overflow-hidden rounded-[32px] border border-white/70 bg-white/80 p-2 shadow-[0_14px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_80px_rgba(15,23,42,0.16)]">
+        <div class="relative h-full overflow-hidden rounded-[26px]">
+          <img src="images/contact-dog.jpg" alt="Warm pet portrait" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-5 text-white">
+            <p class="text-xl font-semibold">Golden Whisker</p>
+            <p class="mt-1 text-sm text-white/80">Warm charming elegance</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tilt-card fade-in group relative h-[290px] sm:h-[310px] lg:mt-14 xl:mt-18 overflow-hidden rounded-[32px] border border-white/70 bg-white/80 p-2 shadow-[0_14px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_80px_rgba(15,23,42,0.16)]">
+        <div class="relative h-full overflow-hidden rounded-[26px]">
+          <img src="images/trainer.jpeg" alt="Pet friends together" class="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-5 text-white">
+            <p class="text-xl font-semibold">Best Friends</p>
+            <p class="mt-1 text-sm text-white/80">Together forever moments</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+      <!-- arrow icon -->
+      <!-- Scroll To Top Button -->
+      <button
+        id="scrollTopBtn"
+        class="fixed bottom-6 right-5 z-50 hidden h-12 w-12 items-center justify-center rounded-full bg-[#4E8185] text-white shadow-[0_8px_25px_rgba(0,0,0,0.2)] transition hover:bg-[#06772a] sm:h-14 sm:w-14"
+      >
+        <svg
+          class="h-5 w-5 sm:h-6 sm:w-6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5 15l7-7 7 7"
+          />
+        </svg>
+      </button>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-[#f5f5f1] px-4 pt-14 pb-6 sm:px-6 lg:px-8 border-t border-black/20 animate-up"
+    >
+      <div class="mx-auto max-w-[1400px]">
+        <!-- Top Footer -->
+        <div
+          class="grid grid-cols-1 gap-10 border-b border-black/5 pb-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12"
+        >
+          <!-- Brand -->
+          <div>
+            <h3
+              class="text-[34px] font-extrabold tracking-[-0.03em] text-[#b04b67]"
+            >
+              Shine Pets
+            </h3>
+
+            <p
+              class="mt-5 max-w-[280px] text-[16px] leading-[1.9] text-[#7a7a7a]"
+            >
+              Premium care facility dedicated to the health and happiness of
+              your pets. Professional, trustworthy, and organic.
+            </p>
+
+            <!-- Social Icons Below Paragraph -->
+            <div class="mt-6 flex items-center gap-3">
+              <a
+                href="#"
+                class="flex h-11 w-11 items-center justify-center rounded-full bg-[#ecebe6] text-[#444] transition hover:bg-[#b04b67] hover:text-white"
+                aria-label="Instagram"
+              >
+                <svg
+                  class="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <circle cx="17.5" cy="6.5" r="1"></circle>
+                </svg>
+              </a>
+
+              <a
+                href="#"
+                class="flex h-11 w-11 items-center justify-center rounded-full bg-[#ecebe6] text-[#444] transition hover:bg-[#b04b67] hover:text-white"
+                aria-label="Facebook"
+              >
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M13.5 21v-8.1h2.7l.4-3.1h-3.1V7.8c0-.9.3-1.5 1.6-1.5h1.7V3.5c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.2v2.2H7.7v3.1h2.6V21h3.2z"
+                  />
+                </svg>
+              </a>
+
+              <a
+                href="#"
+                class="flex h-11 w-11 items-center justify-center rounded-full bg-[#ecebe6] text-[#444] transition hover:bg-[#b04b67] hover:text-white"
+                aria-label="X"
+              >
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M18.9 2H22l-6.8 7.8L23 22h-6.1l-4.8-6.3L6.6 22H3.5l7.2-8.2L1 2h6.3l4.3 5.8L18.9 2zm-1.1 18h1.7L6.2 3.9H4.4L17.8 20z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Services -->
+          <div>
+            <h4 class="text-[24px] font-bold tracking-[-0.02em] text-[#1f1f1f]">
+              Services
+            </h4>
+
+            <ul class="mt-5 space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Pet Boarding</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Pet Training</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Pet Swimming</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Pet Grooming</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h4 class="text-[24px] font-bold tracking-[-0.02em] text-[#1f1f1f]">
+              Company
+            </h4>
+
+            <ul class="mt-5 space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[16px] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                  >Terms of Service</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Us -->
+          <div>
+            <h4 class="text-[24px] font-bold tracking-[-0.02em] text-[#1f1f1f]">
+              Contact Us
+            </h4>
+
+            <div class="mt-5 space-y-4">
+              <!-- Phone -->
+              <div class="flex items-start gap-3">
+                <span
+                  class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center text-[#b04b67]"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.1"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.78.59 2.62a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.46-1.16a2 2 0 0 1 2.11-.45c.84.27 1.72.47 2.62.59A2 2 0 0 1 22 16.92z"
+                    />
+                  </svg>
+                </span>
+                <a
+                  href="tel:+9600962996"
+                  class="text-[16px] leading-[1.7] text-[#7a7a7a] transition hover:text-[#b04b67]"
+                >
+                  +96009 62996
+                </a>
+              </div>
+
+              <!-- Email -->
+              <div class="flex items-start gap-3">
+                <span
+                  class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center text-[#b04b67]"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.1"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 4h16v16H4z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m4 7 8 6 8-6"
+                    />
+                  </svg>
+                </span>
+                <a
+                  href="mailto:shinepetsgroomingstudio@gmail.com"
+                  class="text-[16px] leading-[1.7] text-[#7a7a7a] transition hover:text-[#b04b67] break-all"
+                >
+                  shinepetsgroomingstudio@gmail.com
+                </a>
+              </div>
+
+              <!-- Address -->
+              <div class="flex items-start gap-3">
+                <span
+                  class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center text-[#b04b67]"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.1"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0Z"
+                    />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </span>
+                <p class="text-[16px] leading-[1.7] text-[#7a7a7a]">
+                  Ground Floor, Tami Residency, 45,<br />
+                  Old Mamallapuram Rd, Padur, <br />Chennai, Tamil Nadu 603103
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="pt-6 text-center">
+          <p class="text-[15px] text-[#8a8a8a]">
+            © 2024 Shine Pets. Premium Care for Your Best Friends.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/hamburger-script.js"></script>
+    <script src="js/Animation.js"></script>
+    <script src="js/arrow.js"></script>
+
+    <script>
+  const cards = document.querySelectorAll(".tilt-card");
+  const section = document.querySelector(".gallery-section");
+  const svg = document.getElementById("galleryRoutes");
+  const path = document.getElementById("galleryPath");
+  const glowPath = document.getElementById("galleryPathGlow");
+  const dotsGroup = document.getElementById("routeDots");
+
+  function bindTilt() {
+    cards.forEach((card) => {
+      card.style.transformStyle = "preserve-3d";
+      card.style.willChange = "transform";
+
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -8;
+        const rotateY = ((x - centerX) / centerX) * 8;
+
+        card.style.transform =
+          `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
+      });
+
+      card.addEventListener("mouseleave", () => {
+        card.style.transform =
+          "perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(1)";
+      });
+    });
+  }
+
+  function drawRoutes() {
+    if (!section || !svg || !path || !glowPath || !dotsGroup || cards.length === 0) return;
+
+    const sectionRect = section.getBoundingClientRect();
+
+    const points = [...cards].map((card) => {
+      const rect = card.getBoundingClientRect();
+      return {
+        x: rect.left - sectionRect.left + rect.width / 2,
+        y: rect.top - sectionRect.top + rect.height / 2,
+      };
+    });
+
+    svg.setAttribute("viewBox", `0 0 ${sectionRect.width} ${sectionRect.height}`);
+
+    let d = "";
+
+    points.forEach((point, index) => {
+      if (index === 0) {
+        d += `M ${point.x} ${point.y}`;
+      } else {
+        const prev = points[index - 1];
+        const controlX = (prev.x + point.x) / 2;
+        d += ` C ${controlX} ${prev.y}, ${controlX} ${point.y}, ${point.x} ${point.y}`;
+      }
+    });
+
+    path.setAttribute("d", d);
+    glowPath.setAttribute("d", d);
+
+    dotsGroup.innerHTML = points
+      .map(
+        (point) => `
+          <circle cx="${point.x}" cy="${point.y}" r="12" fill="url(#routeGradient)" opacity="0.10"></circle>
+          <circle cx="${point.x}" cy="${point.y}" r="5" fill="#ffffff" opacity="0.95"></circle>
+          <circle cx="${point.x}" cy="${point.y}" r="2.5" fill="url(#routeGradient)" opacity="0.95"></circle>
+        `
+      )
+      .join("");
+  }
+
+  bindTilt();
+  drawRoutes();
+
+  window.addEventListener("load", drawRoutes);
+  window.addEventListener("resize", drawRoutes);
+  window.addEventListener("scroll", drawRoutes, { passive: true });
+</script>
+  </body>
+</html>
