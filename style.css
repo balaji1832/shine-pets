@@ -95,6 +95,55 @@ body {
   color: white;
 }
 
+  .pet-slider * {
+    box-sizing: border-box;
+  }
+
+  .pet-slides {
+    position: relative;
+    width: 100%;
+    min-height: inherit;
+  }
+
+  .pet-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+    z-index: 1;
+  }
+
+  .pet-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+    position: relative;
+  }
+
+  .pet-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    border: none;
+    background: rgba(15, 23, 42, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+
+  .pet-dot.active {
+    width: 28px;
+    background: #079136;
+  }
+
+  @media (max-width: 1023px) {
+    .pet-indicators {
+      bottom: 10px;
+    }
+  }
+
 
 /* Animation css */
 
