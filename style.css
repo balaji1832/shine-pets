@@ -270,3 +270,27 @@ body {
     .delay-1 { animation-delay: 0.1s; }
     .delay-2 { animation-delay: 0.25s; }
     .delay-3 { animation-delay: 0.4s; }
+
+
+
+
+    /* Modal scroll */
+
+  .modal-scroll-hide {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  .modal-scroll-hide::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+  }
+
+  .modal-scroll-hide::-webkit-scrollbar-track {
+    display: none !important;
+  }
+
+  .modal-scroll-hide::-webkit-scrollbar-thumb {
+    display: none !important;
+  }
