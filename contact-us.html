@@ -910,40 +910,8 @@
     <script src="js/Animation.js"></script>
     <script src="js/arrow.js"></script>
     <script src="js/contactscript.js"></script>
-
-    <script>
-      const faqItems = document.querySelectorAll(".faq-item");
-
-      faqItems.forEach((item) => {
-        const button = item.querySelector(".faq-trigger");
-        const content = item.querySelector(".faq-content");
-        const icon = item.querySelector(".faq-icon");
-
-        button.addEventListener("click", () => {
-          const isOpen = button.getAttribute("aria-expanded") === "true";
-
-          faqItems.forEach((otherItem) => {
-            const otherButton = otherItem.querySelector(".faq-trigger");
-            const otherContent = otherItem.querySelector(".faq-content");
-            const otherIcon = otherItem.querySelector(".faq-icon");
-
-            otherButton.setAttribute("aria-expanded", "false");
-            otherContent.classList.remove("grid-rows-[1fr]");
-            otherContent.classList.add("grid-rows-[0fr]");
-            otherIcon.textContent = "+";
-          });
-
-          if (!isOpen) {
-            button.setAttribute("aria-expanded", "true");
-            content.classList.remove("grid-rows-[0fr]");
-            content.classList.add("grid-rows-[1fr]");
-            icon.textContent = "−";
-          }
-        });
-      });
-    </script>
-
-    <!-- Pet Booking Modal -->
+    
+        <!-- Pet Booking Modal -->
     <div
       class="pet-modal fixed inset-0 z-[99999] hidden items-center justify-center px-3 py-4 sm:px-4 sm:py-6"
     >
@@ -1104,5 +1072,41 @@
         </div>
       </div>
     </div>
+
+
+
+    <script>
+      const faqItems = document.querySelectorAll(".faq-item");
+
+      faqItems.forEach((item) => {
+        const button = item.querySelector(".faq-trigger");
+        const content = item.querySelector(".faq-content");
+        const icon = item.querySelector(".faq-icon");
+
+        button.addEventListener("click", () => {
+          const isOpen = button.getAttribute("aria-expanded") === "true";
+
+          faqItems.forEach((otherItem) => {
+            const otherButton = otherItem.querySelector(".faq-trigger");
+            const otherContent = otherItem.querySelector(".faq-content");
+            const otherIcon = otherItem.querySelector(".faq-icon");
+
+            otherButton.setAttribute("aria-expanded", "false");
+            otherContent.classList.remove("grid-rows-[1fr]");
+            otherContent.classList.add("grid-rows-[0fr]");
+            otherIcon.textContent = "+";
+          });
+
+          if (!isOpen) {
+            button.setAttribute("aria-expanded", "true");
+            content.classList.remove("grid-rows-[0fr]");
+            content.classList.add("grid-rows-[1fr]");
+            icon.textContent = "−";
+          }
+        });
+      });
+    </script>
+
+
   </body>
 </html>

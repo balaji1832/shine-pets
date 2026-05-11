@@ -126,8 +126,8 @@
           <!-- BUTTON -->
           <div class="hidden lg:flex">
             <a
-              href="#"
-              class="rounded-full bg-[#4E8185] px-7 py-3 text-white font-semibold hover:bg-[#3f6e72] transition"
+              href="javascript:void(0)"
+              class="open-pet-modal rounded-full bg-[#4E8185] px-7 py-3 text-white font-semibold hover:bg-[#3f6e72] transition"
             >
               Book Now
             </a>
@@ -223,8 +223,8 @@
           </a>
 
           <a
-            href="#"
-            class="block text-center mt-3 bg-[#4E8185] text-white py-3 rounded-full font-semibold"
+            href="javascript:void(0)"
+            class="open-pet-modal block text-center mt-3 bg-[#4E8185] text-white py-3 rounded-full font-semibold"
           >
             Book Now
           </a>
@@ -780,5 +780,168 @@
     <script src="js/hamburger-script.js"></script>
     <script src="js/Animation.js"></script>
     <script src="js/arrow.js"></script>
+    <script src="js/contactscript.js"></script>
+
+    <!-- Pet Booking Modal -->
+    <div
+      class="pet-modal fixed inset-0 z-[99999] hidden items-center justify-center px-3 py-4 sm:px-4 sm:py-6"
+    >
+      <!-- Overlay -->
+      <div
+        class="pet-modal-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
+      ></div>
+
+      <!-- Modal Box -->
+      <div
+        class="pet-modal-box modal-scroll-hide relative z-10 w-full max-w-[720px] max-h-[94vh] overflow-y-auto rounded-[24px] bg-[#F7F1EA] p-5 shadow-[0_30px_90px_rgba(0,0,0,0.28)] transition-all duration-300 sm:rounded-[28px] md:p-7"
+      >
+        <!-- Close Button -->
+        <button
+          type="button"
+          class="close-pet-modal absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white text-[22px] font-light text-[#4E8185] shadow-md transition hover:bg-[#4E8185] hover:text-white"
+          aria-label="Close modal"
+        >
+          ×
+        </button>
+
+        <!-- Modal Header -->
+        <div class="pr-12">
+          <span
+            class="inline-flex rounded-full bg-[#4E8185]/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-[#4E8185]"
+          >
+            Pet Booking
+          </span>
+
+          <h3
+            class="mt-4 text-[25px] font-bold leading-tight text-[#1f2933] sm:text-[30px] md:text-[34px]"
+          >
+            Book Your Pet Service
+          </h3>
+
+          <p
+            class="mt-2 max-w-[560px] text-[14px] leading-[1.6] text-[#846b5c] md:text-[15px]"
+          >
+            Share your details and our team will contact you shortly.
+          </p>
+        </div>
+
+        <!-- Form -->
+        <form class="pet-enquiry-form mt-6 space-y-4">
+          <!-- Name + Email -->
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div>
+              <label
+                class="mb-2 block text-[13px] font-semibold text-[#846b5c]"
+              >
+                Your Name
+              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="John"
+                required
+                class="h-12 w-full rounded-[12px] border border-transparent bg-white px-4 text-[15px] text-[#222222] outline-none transition placeholder:text-[#9ca3af] focus:border-[#4E8185] focus:ring-2 focus:ring-[#4E8185]/15"
+              />
+            </div>
+
+            <div>
+              <label
+                class="mb-2 block text-[13px] font-semibold text-[#846b5c]"
+              >
+                Email Address
+              </label>
+              <input
+                type="email"
+                name="email"
+                placeholder="john@example.com"
+                required
+                class="h-12 w-full rounded-[12px] border border-transparent bg-white px-4 text-[15px] text-[#222222] outline-none transition placeholder:text-[#9ca3af] focus:border-[#4E8185] focus:ring-2 focus:ring-[#4E8185]/15"
+              />
+            </div>
+          </div>
+
+          <!-- Pet Type -->
+          <div>
+            <label class="mb-2 block text-[13px] font-semibold text-[#846b5c]">
+              Pet Type
+            </label>
+            <select
+              name="pet_type"
+              required
+              class="h-12 w-full rounded-[12px] border border-transparent bg-white px-4 text-[15px] text-[#666666] outline-none transition focus:border-[#4E8185] focus:ring-2 focus:ring-[#4E8185]/15"
+            >
+              <option value="">Select Pet Type</option>
+              <option value="Dog">Dog</option>
+              <option value="Cat">Cat</option>
+              <option value="Bird">Bird</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <!-- Pet Service -->
+          <div>
+            <label class="mb-2 block text-[13px] font-semibold text-[#846b5c]">
+              Pet Service
+            </label>
+            <select
+              name="pet_service"
+              required
+              class="h-12 w-full rounded-[12px] border border-transparent bg-white px-4 text-[15px] text-[#666666] outline-none transition focus:border-[#4E8185] focus:ring-2 focus:ring-[#4E8185]/15"
+            >
+              <option value="">Select Pet Service</option>
+              <option value="Pet Boarding">Pet Boarding</option>
+              <option value="Pet Servicing">Pet Servicing</option>
+              <option value="Pet Training">Pet Training</option>
+              <option value="Pet Swimming">Pet Swimming</option>
+            </select>
+          </div>
+
+          <!-- Message -->
+          <div>
+            <label class="mb-2 block text-[13px] font-semibold text-[#846b5c]">
+              Message
+            </label>
+            <textarea
+              name="message"
+              rows="4"
+              placeholder="Tell us how we can help your pet..."
+              required
+              class="w-full resize-none rounded-[12px] border border-transparent bg-white px-4 py-4 text-[15px] text-[#222222] outline-none transition placeholder:text-[#9ca3af] focus:border-[#4E8185] focus:ring-2 focus:ring-[#4E8185]/15"
+            ></textarea>
+          </div>
+
+          <!-- Submit -->
+          <button
+            type="submit"
+            class="pet-submit-btn inline-flex h-[52px] w-full items-center justify-center rounded-full bg-gradient-to-r from-[#4E8185] to-[#4E8185]/75 text-[15px] font-semibold text-white shadow-[0_8px_18px_rgba(78,129,133,0.22)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_26px_rgba(78,129,133,0.28)] disabled:cursor-not-allowed disabled:opacity-70"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- Toast -->
+    <div
+      class="pet-toast pointer-events-none fixed right-5 top-5 z-[99999] hidden max-w-[360px] translate-y-[-10px] rounded-[14px] bg-white px-5 py-4 opacity-0 shadow-[0_18px_45px_rgba(0,0,0,0.16)] transition-all duration-300"
+    >
+      <div class="flex items-start gap-3">
+        <div
+          class="pet-toast-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-bold"
+        >
+          ✓
+        </div>
+
+        <div>
+          <h4 class="pet-toast-title text-[15px] font-bold text-[#222222]">
+            Success
+          </h4>
+          <p
+            class="pet-toast-message mt-1 text-[13px] leading-[1.5] text-[#666666]"
+          >
+            Your enquiry has been submitted successfully.
+          </p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
